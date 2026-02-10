@@ -1,0 +1,524 @@
+/* Print View 2 Styles - Light Theme for Presentation 2 */
+
+/* Page setup - MUST be first */
+@page {
+  size: landscape;
+  margin: 0;
+}
+
+/* Base styles for light theme */
+.print-view.presentation2-theme {
+  background: #fafafa !important;
+}
+
+/* Loading indicator */
+.print-view.presentation2-theme .print-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.print-view.presentation2-theme .print-loading-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #005a8c;
+  animation: pulse2 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse2 {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.print-view.presentation2-theme .print-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #fafafa !important;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+
+.print-view.presentation2-theme .print-slide:last-child {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.print-view.presentation2-theme .print-slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.print-view.presentation2-theme .print-slide-number {
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #4a4a4a;
+}
+
+/* Screen preview styles */
+@media screen {
+  .print-view.presentation2-theme {
+    padding: 20px;
+    background: #e0e0e4 !important;
+  }
+  
+  .print-view.presentation2-theme .print-slide {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid #c0c0c8;
+    height: auto;
+    min-height: 500px;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .print-view.presentation2-theme .print-slide-content {
+    padding: 1rem;
+  }
+}
+
+/* Print-specific styles */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Hide loading indicator when printing */
+  .print-view.presentation2-theme .print-loading {
+    display: none !important;
+  }
+  
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fafafa !important;
+  }
+  
+  .print-view.presentation2-theme {
+    background: #fafafa !important;
+    padding: 0 !important;
+  }
+  
+  .print-view.presentation2-theme .print-slide {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+    background: #fafafa !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  .print-view.presentation2-theme .print-slide-content {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  /* Ensure slides fit */
+  .print-view.presentation2-theme .slide2 {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    padding: 0.75rem 1.5rem !important;
+    box-sizing: border-box !important;
+    background: #fafafa !important;
+  }
+  
+  /* Scale down headings for print */
+  .print-view.presentation2-theme .slide2-heading {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .slide2-heading::after {
+    bottom: -0.4rem !important;
+    height: 2px !important;
+  }
+  
+  /* Scale down all text for print */
+  .print-view.presentation2-theme .main2-title {
+    font-size: 3rem !important;
+  }
+  
+  .print-view.presentation2-theme .title2-subtitle {
+    font-size: 1.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .title2-tag {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Team roster */
+  .print-view.presentation2-theme .roster2-grid {
+    gap: 0.4rem !important;
+  }
+  
+  .print-view.presentation2-theme .roster2-member {
+    padding: 0.4rem 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .member2-name {
+    font-size: 0.9rem !important;
+  }
+  
+  .print-view.presentation2-theme .member2-role {
+    font-size: 0.75rem !important;
+  }
+  
+  /* TOC */
+  .print-view.presentation2-theme .toc2-grid {
+    gap: 0.4rem !important;
+  }
+  
+  .print-view.presentation2-theme .toc2-item {
+    padding: 0.4rem 0.75rem !important;
+  }
+  
+  .print-view.presentation2-theme .toc2-number {
+    font-size: 1.1rem !important;
+  }
+  
+  .print-view.presentation2-theme .toc2-text {
+    font-size: 1rem !important;
+  }
+  
+  /* Summary */
+  .print-view.presentation2-theme .summary2-grid {
+    gap: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .summary2-card {
+    padding: 0.5rem 0.75rem !important;
+  }
+  
+  .print-view.presentation2-theme .summary2-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .print-view.presentation2-theme .summary2-items li {
+    font-size: 0.9rem !important;
+    line-height: 1.25 !important;
+  }
+  
+  .print-view.presentation2-theme .summary2-items {
+    gap: 0.25rem !important;
+  }
+  
+  /* Tech stack */
+  .print-view.presentation2-theme .tech-stack2-grid {
+    gap: 0.35rem !important;
+  }
+  
+  .print-view.presentation2-theme .tech-stack2-item {
+    padding: 0.35rem 0.75rem !important;
+    grid-template-columns: 100px 110px 1fr !important;
+  }
+  
+  .print-view.presentation2-theme .tech-stack2-layer {
+    font-size: 0.8rem !important;
+  }
+  
+  .print-view.presentation2-theme .tech-stack2-tech {
+    font-size: 0.95rem !important;
+  }
+  
+  .print-view.presentation2-theme .tech-stack2-purpose {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Comparison slides */
+  .print-view.presentation2-theme .comparison2-main {
+    padding: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .comparison2-chosen-title {
+    font-size: 1.3rem !important;
+  }
+  
+  .print-view.presentation2-theme .comparison2-badge {
+    font-size: 0.75rem !important;
+    padding: 0.2rem 0.4rem !important;
+  }
+  
+  .print-view.presentation2-theme .comparison2-pros h4,
+  .print-view.presentation2-theme .comparison2-cons h4 {
+    font-size: 1rem !important;
+  }
+  
+  .print-view.presentation2-theme .comparison2-pros li,
+  .print-view.presentation2-theme .comparison2-cons li {
+    font-size: 0.85rem !important;
+  }
+  
+  .print-view.presentation2-theme .comparison2-alt-grid {
+    gap: 0.4rem !important;
+  }
+  
+  .print-view.presentation2-theme .comparison2-alt-card {
+    padding: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .comparison2-alt-card h5 {
+    font-size: 0.95rem !important;
+  }
+  
+  .print-view.presentation2-theme .alt-pros li,
+  .print-view.presentation2-theme .alt-cons li {
+    font-size: 0.8rem !important;
+  }
+  
+  /* Decision slides */
+  .print-view.presentation2-theme .decision2-badge {
+    padding: 0.5rem 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-label {
+    font-size: 0.8rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-value {
+    font-size: 1.3rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-rationale {
+    padding: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-rationale h3 {
+    font-size: 1rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-rationale li {
+    font-size: 0.85rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-tradeoffs {
+    gap: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-lost,
+  .print-view.presentation2-theme .decision2-gained {
+    padding: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-lost h3,
+  .print-view.presentation2-theme .decision2-gained h3 {
+    font-size: 0.95rem !important;
+  }
+  
+  .print-view.presentation2-theme .decision2-lost li,
+  .print-view.presentation2-theme .decision2-gained li {
+    font-size: 0.8rem !important;
+  }
+  
+  /* UI Design slides - CRITICAL: fit all content on page */
+  .print-view.presentation2-theme .ui-design2-container {
+    gap: 0.5rem !important;
+    grid-template-columns: 1fr 1.2fr !important;
+    align-items: start !important;
+    max-height: calc(100vh - 80px) !important;
+    overflow: hidden !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-image {
+    min-height: 150px !important;
+    max-height: 280px !important;
+    padding: 0.25rem !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-image img {
+    max-height: 260px !important;
+    object-fit: contain !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-details {
+    gap: 0.35rem !important;
+    max-height: calc(100vh - 100px) !important;
+    overflow: hidden !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-description {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-description p {
+    margin: 0 !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-features,
+  .print-view.presentation2-theme .ui-design2-api {
+    padding: 0.35rem 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-features h3,
+  .print-view.presentation2-theme .ui-design2-api h3 {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.2rem !important;
+    gap: 0.25rem !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-features h3 svg,
+  .print-view.presentation2-theme .ui-design2-api h3 svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-features ul {
+    gap: 0.1rem !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-features li {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+    padding-left: 0.9rem !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-features li::before {
+    font-size: 0.65rem !important;
+  }
+  
+  .print-view.presentation2-theme .api-calls-list {
+    gap: 0.1rem !important;
+  }
+  
+  .print-view.presentation2-theme .api-calls-list li code {
+    font-size: 0.6rem !important;
+    padding: 0.15rem 0.3rem !important;
+  }
+  
+  /* API Routes */
+  .print-view.presentation2-theme .api-routes2-container {
+    gap: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .api-routes2-section {
+    padding: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .api-routes2-title {
+    font-size: 0.95rem !important;
+  }
+  
+  .print-view.presentation2-theme .api-method {
+    font-size: 0.7rem !important;
+    padding: 0.15rem 0.3rem !important;
+  }
+  
+  .print-view.presentation2-theme .api-path {
+    font-size: 0.8rem !important;
+  }
+  
+  .print-view.presentation2-theme .api-desc {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Database slides */
+  .print-view.presentation2-theme .database2-container {
+    gap: 0.75rem !important;
+  }
+  
+  .print-view.presentation2-theme .database2-section h3 {
+    font-size: 0.95rem !important;
+  }
+  
+  .print-view.presentation2-theme .database2-section li {
+    font-size: 0.85rem !important;
+  }
+  
+  .print-view.presentation2-theme .database2-image img {
+    max-height: 350px !important;
+  }
+  
+  /* Image slides */
+  .print-view.presentation2-theme .image-slide2-img {
+    max-height: 55vh !important;
+  }
+  
+  .print-view.presentation2-theme .image-slide2-caption {
+    font-size: 0.9rem !important;
+  }
+  
+  /* References */
+  .print-view.presentation2-theme .references2-grid {
+    gap: 0.3rem !important;
+  }
+  
+  .print-view.presentation2-theme .references2-item {
+    padding: 0.25rem 0.4rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .print-view.presentation2-theme .references2-number {
+    font-size: 0.9rem !important;
+    min-width: 2rem !important;
+  }
+  
+  .print-view.presentation2-theme .references2-text {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Thank you slide */
+  .print-view.presentation2-theme .thank-you2-title {
+    font-size: 4rem !important;
+  }
+  
+  .print-view.presentation2-theme .thank-you2-subtitle {
+    font-size: 1.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .thank-you2-footer {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Hide navigation elements */
+  .print-view.presentation2-theme .presentation-header,
+  .print-view.presentation2-theme .slide-dots,
+  .print-view.presentation2-theme .keyboard-hints,
+  .print-view.presentation2-theme .progress-container,
+  .print-view.presentation2-theme .presentation-scanlines {
+    display: none !important;
+  }
+  
+  /* Ensure images print properly */
+  .print-view.presentation2-theme img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+  }
+  
+  /* Prevent page breaks inside elements */
+  .print-view.presentation2-theme .slide2,
+  .print-view.presentation2-theme .print-slide-content {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}

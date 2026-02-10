@@ -488,13 +488,246 @@
   font-weight: 600;
 }
 
-/* Print styles for light theme */
-@media print {
-  .presentation2-theme .slide2 {
-    background: #ffffff !important;
+/* Screen styles for print view preview (light theme) */
+@media screen {
+  .print-view.presentation2-theme {
+    background: #e8e8ec !important;
+    padding: 20px;
   }
   
+  .print-view.presentation2-theme .print-slide {
+    background: #fafafa !important;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #c0c0c8;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 500px;
+  }
+  
+  .print-view.presentation2-theme .print-slide-number {
+    color: #4a4a4a;
+  }
+  
+  .print-view.presentation2-theme .print-loading {
+    background: #fafafa;
+  }
+  
+  .print-view.presentation2-theme .print-loading-text {
+    color: #005a8c;
+  }
+}
+
+/* Print styles for light theme */
+@media print {
+  /* Page setup - MUST be landscape */
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+  
+  /* Force light background colors */
+  .presentation2-theme,
+  .presentation2-theme .print-view,
+  .presentation2-theme .print-slide,
+  .presentation2-theme .slide2 {
+    background: #fafafa !important;
+  }
+  
+  /* Hide decorative elements */
   .presentation2-theme .presentation-scanlines {
     display: none !important;
+  }
+  
+  /* Ensure text is dark and readable */
+  .presentation2-theme .slide2,
+  .presentation2-theme .slide2 * {
+    color: #000000;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Override any dark backgrounds from base print styles */
+  .print-view.presentation2-theme {
+    background: #fafafa !important;
+    padding: 0 !important;
+  }
+  
+  .print-view.presentation2-theme .print-slide {
+    background: #fafafa !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: hidden !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  .print-view.presentation2-theme .print-slide:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+  
+  .print-view.presentation2-theme .print-slide-content {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  /* Ensure slides fit within page */
+  .print-view.presentation2-theme .slide2 {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    padding: 1rem 2rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Scale down content to fit */
+  .print-view.presentation2-theme .slide2-heading {
+    font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Reduce font sizes for print to prevent overflow */
+  .print-view.presentation2-theme .toc2-text,
+  .print-view.presentation2-theme .summary2-items li,
+  .print-view.presentation2-theme .tech-stack2-purpose,
+  .print-view.presentation2-theme .comparison2-pros li,
+  .print-view.presentation2-theme .comparison2-cons li,
+  .print-view.presentation2-theme .decision2-rationale li,
+  .print-view.presentation2-theme .ui-design2-features li,
+  .print-view.presentation2-theme .database2-section li,
+  .print-view.presentation2-theme .references2-text {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .print-view.presentation2-theme .toc2-number,
+  .print-view.presentation2-theme .summary2-title,
+  .print-view.presentation2-theme .tech-stack2-tech,
+  .print-view.presentation2-theme .comparison2-chosen-title {
+    font-size: 1.2rem !important;
+  }
+  
+  /* Reduce gaps and padding for print */
+  .print-view.presentation2-theme .toc2-grid,
+  .print-view.presentation2-theme .summary2-grid,
+  .print-view.presentation2-theme .tech-stack2-grid,
+  .print-view.presentation2-theme .references2-grid {
+    gap: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .toc2-item,
+  .print-view.presentation2-theme .summary2-card,
+  .print-view.presentation2-theme .tech-stack2-item,
+  .print-view.presentation2-theme .references2-item {
+    padding: 0.5rem 0.75rem !important;
+  }
+  
+  /* Card backgrounds */
+  .presentation2-theme .summary2-card,
+  .presentation2-theme .tech-stack2-item,
+  .presentation2-theme .comparison2-main,
+  .presentation2-theme .comparison2-alt-card,
+  .presentation2-theme .decision2-badge,
+  .presentation2-theme .decision2-rationale,
+  .presentation2-theme .decision2-lost,
+  .presentation2-theme .decision2-gained,
+  .presentation2-theme .ui-design2-image,
+  .presentation2-theme .ui-design2-features,
+  .presentation2-theme .ui-design2-api,
+  .presentation2-theme .api-routes2-section,
+  .presentation2-theme .database2-image,
+  .presentation2-theme .database2-section,
+  .presentation2-theme .toc2-item,
+  .presentation2-theme .roster2-member {
+    background: #ffffff !important;
+    border-color: #c0c0c8 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Accent colors for print */
+  .presentation2-theme .slide2-heading,
+  .presentation2-theme .toc2-number,
+  .presentation2-theme .summary2-title,
+  .presentation2-theme .api-routes2-title,
+  .presentation2-theme .database2-section h3,
+  .presentation2-theme .ui-design2-features h3,
+  .presentation2-theme .ui-design2-api h3,
+  .presentation2-theme .decision2-value,
+  .presentation2-theme .decision2-rationale h3 {
+    color: #005a8c !important;
+  }
+  
+  /* Slide number styling for light theme */
+  .print-view.presentation2-theme .print-slide-number {
+    color: #4a4a4a !important;
+    position: absolute !important;
+    bottom: 10px !important;
+    right: 20px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Loading indicator - hide when printing */
+  .print-view.presentation2-theme .print-loading {
+    display: none !important;
+  }
+  
+  /* Images should fit within slide */
+  .print-view.presentation2-theme img {
+    max-width: 100% !important;
+    max-height: 60vh !important;
+    object-fit: contain !important;
+  }
+  
+  /* Title slide adjustments */
+  .print-view.presentation2-theme .main2-title {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  }
+  
+  .print-view.presentation2-theme .title2-subtitle {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+  }
+  
+  /* Team roster - smaller for print */
+  .print-view.presentation2-theme .roster2-grid {
+    gap: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .roster2-member {
+    padding: 0.5rem !important;
+  }
+  
+  .print-view.presentation2-theme .member2-name {
+    font-size: 1rem !important;
+  }
+  
+  .print-view.presentation2-theme .member2-role {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Thank you slide */
+  .print-view.presentation2-theme .thank-you2-title {
+    font-size: 4rem !important;
+  }
+  
+  .print-view.presentation2-theme .thank-you2-subtitle {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Prevent any element from breaking across pages */
+  .print-view.presentation2-theme .slide2 * {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 }

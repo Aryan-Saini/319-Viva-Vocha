@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { MotionConfig } from 'framer-motion';
 import { slides2 } from '../data/slides2';
 import SlideRenderer2 from '../components/SlideRenderer2';
-import './PrintView.css';
 import '../components/slides2/Presentation2Theme.css';
+import './PrintView2.css';
 
 const PrintView2 = () => {
   const [isReady, setIsReady] = useState(false);
