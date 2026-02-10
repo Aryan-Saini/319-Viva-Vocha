@@ -1,0 +1,209 @@
+/* Print View Styles */
+
+/* Base styles - always apply dark theme */
+.print-view {
+  background: #1a1a22;
+}
+
+/* Loading indicator */
+.print-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1a22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.print-loading-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #5eb8c4;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.print-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #1a1a22;
+  page-break-after: always;
+  break-after: page;
+}
+
+.print-slide:last-child {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.print-slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.print-slide-number {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: #686878;
+}
+
+/* Screen styles */
+@media screen {
+  .print-view {
+    padding: 20px;
+    background: #0a0a0f;
+  }
+  
+  .print-slide {
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #3a3a48;
+    height: auto;
+    min-height: 600px;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .print-slide-content {
+    padding: 2rem;
+  }
+}
+
+/* Print-specific styles */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Hide loading indicator when printing */
+  .print-loading {
+    display: none !important;
+  }
+  
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #1a1a22 !important;
+  }
+  
+  .print-view {
+    background: #1a1a22 !important;
+    padding: 0 !important;
+  }
+  
+  .print-slide {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #1a1a22 !important;
+  }
+  
+  .print-slide-content {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+  }
+  
+  .print-slide-number {
+    display: block;
+    color: #686878;
+  }
+  
+  /* Ensure slides render with dark theme colors */
+  .slide {
+    background: #1a1a22 !important;
+  }
+  
+  /* Hide any navigation or UI elements */
+  .presentation-header,
+  .slide-dots,
+  .keyboard-hints,
+  .progress-container,
+  .presentation-scanlines,
+  .noise-overlay::before,
+  .grid-bg::before {
+    display: none !important;
+  }
+  
+  /* Page setup */
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+  
+  /* Ensure images print properly */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  /* Force all backgrounds to print */
+  .slide,
+  .print-slide,
+  .user-card,
+  .story-card,
+  .requirement-card,
+  .func-req-card,
+  .persona-section,
+  .risk-header,
+  .risk-row,
+  .metric-card,
+  .security-card,
+  .phase-card,
+  .simple-item,
+  .roster-member,
+  .usability-items,
+  .wbs-node-content,
+  .timeline-marker,
+  .title-decoration,
+  .thankyou-decoration {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* WBS specific print styles */
+  .wbs-image-container {
+    height: auto !important;
+    max-height: 90vh;
+  }
+  
+  .wbs-image {
+    max-height: 85vh !important;
+    width: auto !important;
+  }
+  
+  /* Schedule image print styles */
+  .schedule-image-container {
+    height: auto !important;
+    max-height: 90vh;
+  }
+  
+  .schedule-image {
+    max-height: 85vh !important;
+    width: auto !important;
+  }
+}

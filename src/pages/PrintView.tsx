@@ -1,0 +1,55 @@
+import { useEffect, useState } from 'react';
+import { MotionConfig } from 'framer-motion';
+import { slides } from '../data/slides';
+import SlideRenderer from '../components/SlideRenderer';
+import './PrintView.css';
+
+const PrintView = () => {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    // Set document title for PDF filename
+    document.title = 'VivaVoice_Presentation';
+    
+    // Wait for all content to render (longer delay to ensure everything loads)
+    const readyTimer = setTimeout(() => {
+      setIsReady(true);
+    }, 1500);
+    
+    return () => clearTimeout(readyTimer);
+  }, []);
+
+  useEffect(() => {
+    if (isReady) {
+      // Additional delay after ready state to ensure DOM is fully painted
+      const printTimer = setTimeout(() => {
+        window.print();
+      }, 500);
+      
+      return () => clearTimeout(printTimer);
+    }
+  }, [isReady]);
+
+  return (
+    // Disable all Framer Motion animations for print view
+    <MotionConfig reducedMotion="always">
+      <div className="print-view">
+        {!isReady && (
+          <div className="print-loading">
+            <div className="print-loading-text">Preparing slides for print...</div>
+          </div>
+        )}
+        {slides.map((slide) => (
+          <div key={slide.id} className="print-slide">
+            <div className="print-slide-content">
+              <SlideRenderer slide={slide} />
+            </div>
+            <div className="print-slide-number">{slide.id}</div>
+          </div>
+        ))}
+      </div>
+    </MotionConfig>
+  );
+};
+
+export default PrintView;

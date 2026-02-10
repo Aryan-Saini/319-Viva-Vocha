@@ -1,0 +1,149 @@
+:root {
+  /* Futuristic Dark Theme Colors - Lighter & Less Vibrant */
+  --bg-primary: #1a1a22;
+  --bg-secondary: #22222c;
+  --bg-tertiary: #2a2a36;
+  --bg-card: #252530;
+  --bg-hover: #30303e;
+  
+  --accent-cyan: #5eb8c4;
+  --accent-cyan-dim: #4a9aa5;
+  --accent-magenta: #c47a9e;
+  --accent-yellow: #c4c47a;
+  --accent-green: #7ac4a0;
+  --accent-orange: #c4a07a;
+  
+  --text-primary: #e0e0e8;
+  --text-secondary: #9898a8;
+  --text-muted: #686878;
+  
+  --border-color: #3a3a48;
+  --border-glow: rgba(94, 184, 196, 0.2);
+  
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  
+  --box-shadow-glow: 0 0 20px rgba(94, 184, 196, 0.1);
+  --box-shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan-dim);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+}
+
+/* Global Link Styles */
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-magenta);
+  text-shadow: 0 0 10px var(--accent-magenta);
+}
+
+/* Utility Classes */
+.text-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.box-glow {
+  box-shadow: var(--box-shadow-glow);
+}
+
+/* Grid Pattern Background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(94, 184, 196, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 184, 196, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Noise Texture Overlay */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
+/* Print Styles - Global */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Hide noise overlay and grid background when printing */
+  .noise-overlay::before,
+  .grid-bg {
+    display: none !important;
+    background: none !important;
+  }
+  
+  .app {
+    background: var(--bg-primary) !important;
+  }
+  
+  /* Page setup */
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+}
