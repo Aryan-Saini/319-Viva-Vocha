@@ -1,0 +1,500 @@
+/* Presentation 2 - Light Theme for Projector Readability */
+/* Clean, bold aesthetic with maximum contrast and thick fonts */
+
+.presentation2-theme {
+  /* Light backgrounds - clean and bright for projectors */
+  --bg-primary: #fafafa;
+  --bg-secondary: #f0f0f2;
+  --bg-tertiary: #e8e8ec;
+  --bg-card: #ffffff;
+  --bg-hover: #f5f5f7;
+  
+  /* Professional accent colors - darker for better contrast */
+  --accent-cyan: #005a8c;
+  --accent-cyan-dim: #004570;
+  --accent-magenta: #8a3d5c;
+  --accent-yellow: #9a7209;
+  --accent-green: #1f6347;
+  --accent-orange: #a8521f;
+  
+  /* Maximum contrast text - pure black for readability */
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --text-muted: #4a4a4a;
+  
+  /* Subtle borders */
+  --border-color: #c0c0c8;
+  --border-glow: rgba(0, 90, 140, 0.15);
+  
+  /* Clean shadows */
+  --box-shadow-glow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --box-shadow-card: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Apply theme to presentation container */
+.presentation2-theme .presentation {
+  background: var(--bg-primary);
+}
+
+/* Hide header, dots, and keyboard hints ONLY in fullscreen */
+.presentation2-theme.fullscreen-mode .presentation-header,
+.presentation2-theme.fullscreen-mode .slide-dots,
+.presentation2-theme.fullscreen-mode .keyboard-hints {
+  display: none !important;
+}
+
+/* Expand slide container in fullscreen */
+.presentation2-theme.fullscreen-mode .slide-container {
+  top: 4px;
+  height: calc(100vh - 34px);
+}
+
+/* Override scanlines for light theme - make them subtle */
+.presentation2-theme .presentation-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.01) 2px,
+    rgba(0, 0, 0, 0.01) 4px
+  );
+  opacity: 0.3;
+}
+
+/* Header styling for light theme */
+.presentation2-theme .presentation-header {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.presentation2-theme .nav-button {
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+  background: var(--bg-card);
+}
+
+.presentation2-theme .nav-button:hover:not(:disabled) {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  background: var(--bg-secondary);
+}
+
+.presentation2-theme .nav-button:disabled {
+  opacity: 0.4;
+}
+
+/* Slide counter */
+.presentation2-theme .slide-counter {
+  color: var(--text-secondary);
+}
+
+.presentation2-theme .counter-current {
+  color: var(--accent-cyan);
+}
+
+/* Progress bar */
+.presentation2-theme .progress-container {
+  background: var(--bg-tertiary);
+}
+
+.presentation2-theme .progress-bar {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-cyan-dim));
+}
+
+/* Slide dots */
+.presentation2-theme .dot {
+  background: var(--border-color);
+}
+
+.presentation2-theme .dot:hover {
+  background: var(--accent-cyan-dim);
+}
+
+.presentation2-theme .dot.active {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px rgba(0, 119, 182, 0.4);
+}
+
+/* Keyboard hints */
+.presentation2-theme .keyboard-hints {
+  color: var(--text-muted);
+}
+
+.presentation2-theme .keyboard-hints kbd {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Slide wrapper background */
+.presentation2-theme .slide-wrapper {
+  background: var(--bg-primary);
+}
+
+/* Base slide styling */
+.presentation2-theme .slide2 {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Heading underline - cleaner gradient */
+.presentation2-theme .slide2-heading::after {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-cyan-dim));
+}
+
+/* Title slide decorations */
+.presentation2-theme .deco2-line {
+  background: var(--border-color);
+}
+
+.presentation2-theme .deco2-corner {
+  border-color: var(--accent-cyan);
+}
+
+.presentation2-theme .main2-title {
+  text-shadow: none;
+  color: var(--text-primary);
+}
+
+.presentation2-theme .title2-subtitle {
+  color: var(--accent-cyan);
+}
+
+/* Team roster cards */
+.presentation2-theme .roster2-member {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+/* TOC items */
+.presentation2-theme .toc2-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.presentation2-theme .toc2-item:hover {
+  border-color: var(--accent-cyan);
+  background: var(--bg-secondary);
+}
+
+/* Summary cards */
+.presentation2-theme .summary2-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+/* Tech stack items */
+.presentation2-theme .tech-stack2-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Comparison cards */
+.presentation2-theme .comparison2-main,
+.presentation2-theme .comparison2-alt-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation2-theme .comparison2-badge {
+  background: var(--accent-cyan);
+  color: #ffffff;
+}
+
+/* Decision cards */
+.presentation2-theme .decision2-badge {
+  background: var(--bg-card);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation2-theme .decision2-rationale,
+.presentation2-theme .decision2-lost,
+.presentation2-theme .decision2-gained {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+/* UI Design cards */
+.presentation2-theme .ui-design2-image,
+.presentation2-theme .ui-design2-features,
+.presentation2-theme .ui-design2-api {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+/* API Routes sections */
+.presentation2-theme .api-routes2-section {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+/* API method badges - higher contrast */
+.presentation2-theme .api-method-get {
+  background: rgba(46, 125, 90, 0.15);
+  color: var(--accent-green);
+}
+
+.presentation2-theme .api-method-post {
+  background: rgba(0, 119, 182, 0.15);
+  color: var(--accent-cyan);
+}
+
+.presentation2-theme .api-method-patch {
+  background: rgba(184, 134, 11, 0.15);
+  color: var(--accent-yellow);
+}
+
+.presentation2-theme .api-method-delete {
+  background: rgba(157, 78, 108, 0.15);
+  color: var(--accent-magenta);
+}
+
+/* Database sections */
+.presentation2-theme .database2-image,
+.presentation2-theme .database2-section {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+/* Image slide */
+.presentation2-theme .image-slide2-img {
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+/* References */
+.presentation2-theme .references2-item {
+  color: var(--text-secondary);
+}
+
+/* Thank you slide */
+.presentation2-theme .thank-you2-title {
+  text-shadow: none;
+  color: var(--text-primary);
+}
+
+.presentation2-theme .ty2-line {
+  background: var(--border-color);
+}
+
+.presentation2-theme .ty2-corner {
+  border-color: var(--accent-cyan);
+}
+
+/* Code blocks in light theme */
+.presentation2-theme .api-calls-list li code {
+  background: var(--bg-tertiary);
+  color: var(--accent-cyan);
+}
+
+/* ============================================
+   BOLD FONTS FOR PROJECTOR READABILITY
+   ============================================ */
+
+/* All body text should be semibold minimum */
+.presentation2-theme .slide2 {
+  font-weight: 600;
+}
+
+/* Headings - extra bold */
+.presentation2-theme .slide2-heading {
+  font-weight: 900;
+}
+
+.presentation2-theme .main2-title {
+  font-weight: 900;
+}
+
+/* Subtitles and labels - bold */
+.presentation2-theme .title2-subtitle,
+.presentation2-theme .title2-tag,
+.presentation2-theme .roster2-label {
+  font-weight: 700;
+}
+
+/* Team member names */
+.presentation2-theme .member2-name {
+  font-weight: 800;
+}
+
+.presentation2-theme .member2-role {
+  font-weight: 600;
+}
+
+/* TOC items - bold numbers, semibold text */
+.presentation2-theme .toc2-number {
+  font-weight: 900;
+}
+
+.presentation2-theme .toc2-text {
+  font-weight: 700;
+}
+
+/* Summary cards */
+.presentation2-theme .summary2-title {
+  font-weight: 800;
+}
+
+.presentation2-theme .summary2-items li {
+  font-weight: 600;
+}
+
+/* Tech stack */
+.presentation2-theme .tech-stack2-layer {
+  font-weight: 700;
+}
+
+.presentation2-theme .tech-stack2-tech {
+  font-weight: 800;
+}
+
+.presentation2-theme .tech-stack2-purpose {
+  font-weight: 600;
+}
+
+/* Comparison slides */
+.presentation2-theme .comparison2-badge {
+  font-weight: 800;
+}
+
+.presentation2-theme .comparison2-chosen-title {
+  font-weight: 900;
+}
+
+.presentation2-theme .comparison2-pros h4,
+.presentation2-theme .comparison2-cons h4 {
+  font-weight: 800;
+}
+
+.presentation2-theme .comparison2-pros li,
+.presentation2-theme .comparison2-cons li {
+  font-weight: 600;
+}
+
+.presentation2-theme .comparison2-alt-header {
+  font-weight: 700;
+}
+
+.presentation2-theme .comparison2-alt-card h5 {
+  font-weight: 800;
+}
+
+.presentation2-theme .alt-pros li,
+.presentation2-theme .alt-cons li {
+  font-weight: 600;
+}
+
+/* Decision slides */
+.presentation2-theme .decision2-label {
+  font-weight: 700;
+}
+
+.presentation2-theme .decision2-value {
+  font-weight: 900;
+}
+
+.presentation2-theme .decision2-rationale h3 {
+  font-weight: 800;
+}
+
+.presentation2-theme .decision2-rationale li {
+  font-weight: 600;
+}
+
+.presentation2-theme .decision2-lost h3,
+.presentation2-theme .decision2-gained h3 {
+  font-weight: 800;
+}
+
+.presentation2-theme .decision2-lost li,
+.presentation2-theme .decision2-gained li {
+  font-weight: 600;
+}
+
+/* UI Design slides */
+.presentation2-theme .ui-design2-description {
+  font-weight: 600;
+}
+
+.presentation2-theme .ui-design2-features h3,
+.presentation2-theme .ui-design2-api h3 {
+  font-weight: 800;
+}
+
+.presentation2-theme .ui-design2-features li {
+  font-weight: 600;
+}
+
+/* API Routes */
+.presentation2-theme .api-routes2-title {
+  font-weight: 800;
+}
+
+.presentation2-theme .api-method {
+  font-weight: 800;
+}
+
+.presentation2-theme .api-path {
+  font-weight: 700;
+}
+
+.presentation2-theme .api-desc {
+  font-weight: 600;
+}
+
+/* Database slides */
+.presentation2-theme .database2-section h3 {
+  font-weight: 800;
+}
+
+.presentation2-theme .database2-section li {
+  font-weight: 600;
+}
+
+/* Image slides */
+.presentation2-theme .image-slide2-caption {
+  font-weight: 600;
+}
+
+/* References */
+.presentation2-theme .references2-number {
+  font-weight: 800;
+}
+
+.presentation2-theme .references2-text {
+  font-weight: 600;
+}
+
+/* Thank you slide */
+.presentation2-theme .thank-you2-title {
+  font-weight: 900;
+}
+
+.presentation2-theme .thank-you2-subtitle {
+  font-weight: 700;
+}
+
+.presentation2-theme .thank-you2-footer {
+  font-weight: 600;
+}
+
+/* Print styles for light theme */
+@media print {
+  .presentation2-theme .slide2 {
+    background: #ffffff !important;
+  }
+  
+  .presentation2-theme .presentation-scanlines {
+    display: none !important;
+  }
+}

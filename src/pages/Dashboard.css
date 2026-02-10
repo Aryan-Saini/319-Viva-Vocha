@@ -134,9 +134,14 @@
 .main-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  padding: 3rem;
+  padding: 2rem;
   position: relative;
-  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-card-magenta {
+  border-color: rgba(196, 122, 158, 0.3);
 }
 
 .card-corner {
@@ -145,6 +150,10 @@
   height: 20px;
   border-color: var(--accent-cyan);
   border-style: solid;
+}
+
+.card-corner-magenta {
+  border-color: var(--accent-magenta);
 }
 
 .card-corner-tl {
@@ -172,7 +181,7 @@
 }
 
 .card-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .card-tag {
@@ -182,13 +191,18 @@
   color: var(--accent-cyan);
   background: rgba(0, 240, 255, 0.1);
   padding: 0.25rem 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   letter-spacing: 0.1em;
+}
+
+.card-tag-magenta {
+  color: var(--accent-magenta);
+  background: rgba(196, 122, 158, 0.1);
 }
 
 .card-title {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
@@ -196,20 +210,63 @@
 
 .card-subtitle {
   font-family: var(--font-body);
-  font-size: 1.25rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  color: var(--accent-cyan);
+}
+
+.card-subtitle-magenta {
+  color: var(--accent-magenta);
 }
 
 .card-body {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .card-description {
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  max-width: 800px;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Card Stats */
+.card-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-mini-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+}
+
+.main-card-magenta .stat-mini-value {
+  color: var(--accent-magenta);
+}
+
+.stat-mini-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Presentations Grid */
+.presentations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Feature Grid */
@@ -260,12 +317,17 @@
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.5rem;
   background: linear-gradient(135deg, var(--accent-cyan-dim), var(--accent-cyan));
   border: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  margin-top: auto;
+}
+
+.launch-button-magenta {
+  background: linear-gradient(135deg, rgba(196, 122, 158, 0.6), var(--accent-magenta));
 }
 
 .launch-button::before {
@@ -285,15 +347,15 @@
 
 .button-text {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--bg-primary);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
 }
 
 .button-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   color: var(--bg-primary);
 }
 
@@ -423,6 +485,10 @@
   .team-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  .presentations-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -447,11 +513,16 @@
   }
   
   .card-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card-stats {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 
