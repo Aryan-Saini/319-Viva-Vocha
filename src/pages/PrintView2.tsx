@@ -40,14 +40,23 @@ const PrintView2 = () => {
             <div className="print-loading-text">Preparing slides for print...</div>
           </div>
         )}
-        {slides2.map((slide) => (
-          <div key={slide.id} className="print-slide">
-            <div className="print-slide-content">
-              <SlideRenderer2 slide={slide} />
+        {slides2.map((slide) => {
+          // Appendix slides are 25-31 (after Thank You slide which is 24)
+          const isAppendix = slide.id >= 25;
+          return (
+            <div key={slide.id} className={`print-slide ${isAppendix ? 'appendix-slide' : ''}`}>
+              {isAppendix && (
+                <div className="appendix-notch">
+                  <span>APPENDIX</span>
+                </div>
+              )}
+              <div className="print-slide-content">
+                <SlideRenderer2 slide={slide} />
+              </div>
+              <div className="print-slide-number">{slide.id}</div>
             </div>
-            <div className="print-slide-number">{slide.id}</div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </MotionConfig>
   );

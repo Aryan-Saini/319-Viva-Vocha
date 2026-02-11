@@ -162,6 +162,12 @@ const Presentation2 = () => {
             transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="slide-wrapper"
           >
+            {/* Appendix notch for slides 25-31 */}
+            {currentSlide >= 25 && (
+              <div className="appendix-notch">
+                <span>APPENDIX</span>
+              </div>
+            )}
             <SlideRenderer2 slide={slide} />
           </motion.div>
         </AnimatePresence>

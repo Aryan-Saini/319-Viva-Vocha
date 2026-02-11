@@ -651,6 +651,15 @@ export const slides2: Slide2[] = [
   },
   {
     id: 24,
+    title: "Thank You",
+    type: 'thank-you',
+    content: {
+      subtitle: "Questions?"
+    }
+  },
+  // APPENDIX SECTION - slides 25-31
+  {
+    id: 25,
     title: "API Routes - Reports",
     type: 'api-routes',
     content: {
@@ -683,7 +692,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 25,
+    id: 26,
     title: "API Routes - Clients",
     type: 'api-routes',
     content: {
@@ -709,7 +718,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 26,
+    id: 27,
     title: "API Routes - Auth & Admin",
     type: 'api-routes',
     content: {
@@ -745,7 +754,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 27,
+    id: 28,
     title: "Database Architecture",
     type: 'database',
     content: {
@@ -771,7 +780,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 28,
+    id: 29,
     title: "Persona Flow Diagram",
     type: 'image-slide',
     content: {
@@ -780,7 +789,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 29,
+    id: 30,
     title: "Navigation Diagrams",
     type: 'image-slide',
     content: {
@@ -789,7 +798,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 30,
+    id: 31,
     title: "References",
     type: 'references',
     content: {
@@ -811,14 +820,6 @@ export const slides2: Slide2[] = [
         { number: "15", text: "AWS - Regional Product Services" },
         { number: "16", text: "PIPEDA - Privacy Laws in Canada" }
       ]
-    }
-  },
-  {
-    id: 31,
-    title: "Thank You",
-    type: 'thank-you',
-    content: {
-      subtitle: "Questions?"
     }
   }
 ];

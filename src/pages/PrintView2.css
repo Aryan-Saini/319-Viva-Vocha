@@ -6,6 +6,27 @@
   margin: 0;
 }
 
+/* Appendix notch styles */
+.print-view.presentation2-theme .appendix-notch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #000000;
+  color: #ffffff;
+  padding: 12px 24px 16px 32px;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 9999;
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.print-view.presentation2-theme .appendix-notch span {
+  display: block;
+}
+
 /* Base styles for light theme */
 .print-view.presentation2-theme {
   background: #fafafa !important;
@@ -97,6 +118,23 @@
 /* Print-specific styles */
 @media print {
   * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Appendix notch print styles */
+  .print-view.presentation2-theme .appendix-notch {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    padding: 10px 20px 14px 26px !important;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    z-index: 9999 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     color-adjust: exact !important;

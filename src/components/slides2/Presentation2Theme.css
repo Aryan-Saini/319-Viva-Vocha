@@ -129,6 +129,24 @@
 /* Slide wrapper background */
 .presentation2-theme .slide-wrapper {
   background: var(--bg-primary);
+  position: relative;
+}
+
+/* Appendix notch for presentation view */
+.presentation2-theme .slide-wrapper .appendix-notch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #000000;
+  color: #ffffff;
+  padding: 12px 24px 16px 32px;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 100;
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Base slide styling */
@@ -503,6 +521,24 @@
     aspect-ratio: 16 / 9;
     height: auto;
     min-height: 500px;
+    position: relative;
+  }
+  
+  /* Appendix notch for screen preview */
+  .print-view.presentation2-theme .appendix-notch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #000000;
+    color: #ffffff;
+    padding: 12px 24px 16px 32px;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 9999;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
   }
   
   .print-view.presentation2-theme .print-slide-number {
