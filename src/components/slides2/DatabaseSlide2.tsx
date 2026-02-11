@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import type { Slide2 } from '../../data/slides2';
 import ClickableImage from './ClickableImage';
+import { getSlide2ImageSrc } from '../../utils/slideImage';
 import './SlideStyles2.css';
 
 interface DatabaseSlide2Props {
@@ -34,7 +35,7 @@ const DatabaseSlide2 = ({ slide }: DatabaseSlide2Props) => {
         >
           {content.imageSrc && (
             <ClickableImage 
-              src={`/src/assets/images/2/${content.imageSrc}.png`} 
+              src={getSlide2ImageSrc(content.imageSrc)} 
               alt="Database Schema"
             />
           )}
