@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import type { Slide2 } from '../../data/slides2';
 import ClickableImage from './ClickableImage';
+import { getSlide2ImageSrc } from '../../utils/slideImage';
 import './SlideStyles2.css';
 
 interface ImageSlide2Props {
@@ -32,7 +33,7 @@ const ImageSlide2 = ({ slide }: ImageSlide2Props) => {
       >
         {content.imageSrc && (
           <ClickableImage 
-            src={`/src/assets/images/2/${content.imageSrc}.png`} 
+            src={getSlide2ImageSrc(content.imageSrc)} 
             alt={slide.title}
             className="image-slide2-img"
           />
