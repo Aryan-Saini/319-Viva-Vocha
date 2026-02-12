@@ -41,6 +41,7 @@ const UIDesignSlide2 = ({ slide }: UIDesignSlide2Props) => {
               <ClickableImage 
                 src={getSlide2ImageSrc(content.imageSrc)} 
                 alt={uiPage.name}
+                scale={content.imageScale}
               />
             )}
           </motion.div>
@@ -54,6 +55,7 @@ const UIDesignSlide2 = ({ slide }: UIDesignSlide2Props) => {
             <ClickableImage 
               src={getSlide2ImageSrc(uiPage.secondImageSrc)} 
               alt={`${uiPage.name} - Additional`}
+              scale={uiPage.secondImageScale}
             />
           </motion.div>
         </div>
@@ -87,6 +89,7 @@ const UIDesignSlide2 = ({ slide }: UIDesignSlide2Props) => {
             <ClickableImage 
               src={getSlide2ImageSrc(content.imageSrc)} 
               alt={uiPage.name}
+              scale={content.imageScale}
             />
           )}
           {!content.imageSrc && (

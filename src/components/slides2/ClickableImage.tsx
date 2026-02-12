@@ -6,10 +6,11 @@ interface ClickableImageProps {
   src: string;
   alt: string;
   className?: string;
+  scale?: number;
   onError?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }
 
-const ClickableImage = ({ src, alt, className, onError }: ClickableImageProps) => {
+const ClickableImage = ({ src, alt, className, scale = 1.5, onError }: ClickableImageProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const openFullscreen = () => setIsFullscreen(true);
@@ -58,6 +59,7 @@ const ClickableImage = ({ src, alt, className, onError }: ClickableImageProps) =
               src={src} 
               alt={alt}
               className="fullscreen-image"
+              style={{ transform: `scale(${scale})` }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

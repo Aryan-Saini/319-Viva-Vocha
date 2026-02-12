@@ -37,6 +37,7 @@ const DatabaseSlide2 = ({ slide }: DatabaseSlide2Props) => {
             <ClickableImage 
               src={getSlide2ImageSrc(content.imageSrc)} 
               alt="Database Schema"
+              scale={content.imageScale}
             />
           )}
           {!content.imageSrc && (

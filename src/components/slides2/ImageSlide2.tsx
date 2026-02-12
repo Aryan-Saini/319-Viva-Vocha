@@ -36,6 +36,7 @@ const ImageSlide2 = ({ slide }: ImageSlide2Props) => {
             src={getSlide2ImageSrc(content.imageSrc)} 
             alt={slide.title}
             className="image-slide2-img"
+            scale={content.imageScale}
           />
         )}
         {content.imageCaption && (
