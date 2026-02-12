@@ -149,8 +149,7 @@ export const slides2: Slide2[] = [
     title: "Tech Stack",
     type: 'image-slide',
     content: {
-      imageSrc: "image14",
-      imageCaption: "User persona core tasks flow diagram showing how different user types interact with the system"
+      imageSrc: "image14"
     }
   },
   {
