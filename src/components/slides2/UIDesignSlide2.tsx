@@ -14,6 +14,53 @@ const UIDesignSlide2 = ({ slide }: UIDesignSlide2Props) => {
 
   if (!uiPage) return null;
 
+  // Dual image mode - show two images side by side
+  if (uiPage.dualImageMode && uiPage.secondImageSrc) {
+    return (
+      <motion.div 
+        className="slide2 slide2-ui-design"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        <motion.h2 
+          className="slide2-heading"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          {slide.title}
+        </motion.h2>
+
+        <div className="ui-design2-dual-images">
+          <motion.div 
+            className="ui-design2-dual-image"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {content.imageSrc && (
+              <ClickableImage 
+                src={getSlide2ImageSrc(content.imageSrc)} 
+                alt={uiPage.name}
+              />
+            )}
+          </motion.div>
+
+          <motion.div 
+            className="ui-design2-dual-image"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <ClickableImage 
+              src={getSlide2ImageSrc(uiPage.secondImageSrc)} 
+              alt={`${uiPage.name} - Additional`}
+            />
+          </motion.div>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div 
       className="slide2 slide2-ui-design"
@@ -92,28 +139,30 @@ const UIDesignSlide2 = ({ slide }: UIDesignSlide2Props) => {
             </ul>
           </motion.div>
 
-          <motion.div 
-            className="ui-design2-api"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-          >
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-              API Calls
-            </h3>
-            <ul className="api-calls-list">
-              {uiPage.apiCalls.map((call, i) => (
-                <li key={i}>
-                  <code>{call}</code>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          {uiPage.apiCalls && uiPage.apiCalls.length > 0 && (
+            <motion.div 
+              className="ui-design2-api"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+                API Calls
+              </h3>
+              <ul className="api-calls-list">
+                {uiPage.apiCalls.map((call, i) => (
+                  <li key={i}>
+                    <code>{call}</code>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
         </div>
       </div>
     </motion.div>

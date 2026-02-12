@@ -79,6 +79,8 @@ export interface UIPage {
   features: string[];
   apiCalls: string[];
   figmaLink?: string;
+  secondImageSrc?: string;
+  dualImageMode?: boolean;
 }
 
 export interface Reference {
@@ -541,6 +543,25 @@ export const slides2: Slide2[] = [
   },
   {
     id: 20,
+    title: "Dashboard Page",
+    type: 'ui-design',
+    content: {
+      uiPage: {
+        name: "Main Dashboard",
+        description: "Central hub for case workers to manage their daily workflow",
+        features: [
+          "Quick menu items for common actions (New Client, Add Case Note, Export Data, Browse Clients)",
+          "Filterable and sortable client list with program, progress, and status columns",
+          "Immediate action items list showing clients needing attention",
+          "At-a-glance metrics (Active Clients, Notes This Week, Goals On Track, Avg. Progress)"
+        ],
+        apiCalls: []
+      },
+      imageSrc: "image8"
+    }
+  },
+  {
+    id: 21,
     title: "Client Profile Page",
     type: 'ui-design',
     content: {
@@ -563,32 +584,23 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 21,
+    id: 22,
     title: "Case Note Page",
     type: 'ui-design',
     content: {
       uiPage: {
         name: "Case Note Page",
-        description: "Streamlined case note management with improved UX",
-        features: [
-          "Sticky action buttons at top",
-          "Status indicator (Draft/Edit Mode/Published)",
-          "Removed 24-hour clock for each section",
-          "Auto-collapse empty sections",
-          "Tag system replaces abbreviation legend",
-          "Case note history for audit trail"
-        ],
-        apiCalls: [
-          "GET /api/case-notes/:caseNoteId - Load note",
-          "PATCH /api/case-notes/:caseNoteId - Save changes",
-          "DELETE /api/case-notes/:caseNoteId - Delete note"
-        ]
+        description: "",
+        features: [],
+        apiCalls: [],
+        dualImageMode: true,
+        secondImageSrc: "image17"
       },
       imageSrc: "image7"
     }
   },
   {
-    id: 22,
+    id: 23,
     title: "Login Page",
     type: 'ui-design',
     content: {
@@ -612,7 +624,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 23,
+    id: 24,
     title: "Admin Page",
     type: 'ui-design',
     content: {
@@ -637,7 +649,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 24,
+    id: 25,
     title: "Reports Page",
     type: 'ui-design',
     content: {
@@ -664,7 +676,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 25,
+    id: 26,
     title: "API Routes - Reports",
     type: 'api-routes',
     content: {
@@ -697,7 +709,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 26,
+    id: 27,
     title: "API Routes - Clients",
     type: 'api-routes',
     content: {
@@ -723,7 +735,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 27,
+    id: 28,
     title: "API Routes - Auth & Admin",
     type: 'api-routes',
     content: {
@@ -759,7 +771,34 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 28,
+    id: 29,
+    title: "Database Schema",
+    type: 'database',
+    content: {
+      sections: [
+        {
+          title: "Design Decisions",
+          items: [
+            "Prototype schema - awaiting final structure from David",
+            "Soft deletes (is_active flag) for data recovery and audit compliance",
+            "CUID for all primary keys (collision-resistant, URL-safe)"
+          ]
+        },
+        {
+          title: "Key Relationships",
+          items: [
+            "Clients → Programs (many:many via Enrollments)",
+            "Clients → Case Notes (1:many)",
+            "Users → Roles (many:many via User_Roles)",
+            "Audit_Log tracks all CRUD operations"
+          ]
+        }
+      ],
+      imageSrc: "image13"
+    }
+  },
+  {
+    id: 30,
     title: "Thank You",
     type: 'thank-you',
     content: {
@@ -767,7 +806,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 29,
+    id: 31,
     title: "Anticipated Questions",
     type: 'qna',
     content: {
@@ -799,9 +838,9 @@ export const slides2: Slide2[] = [
       ]
     }
   },
-  // APPENDIX SECTION - slides 30-32
+  // APPENDIX SECTION - slides 32-34
   {
-    id: 30,
+    id: 32,
     title: "Persona Diagram",
     type: 'database',
     content: {
@@ -827,7 +866,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 31,
+    id: 33,
     title: "Navigation Diagrams",
     type: 'image-slide',
     content: {
@@ -836,7 +875,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 32,
+    id: 34,
     title: "References",
     type: 'references',
     content: {

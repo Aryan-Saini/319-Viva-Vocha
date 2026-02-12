@@ -582,6 +582,32 @@
   align-content: center;
 }
 
+.ui-design2-dual-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-design2-dual-image {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.ui-design2-dual-image img {
+  max-width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+}
+
 .ui-design2-image {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -1049,6 +1075,7 @@
   .comparison2-pros-cons { grid-template-columns: 1fr; }
   .decision2-tradeoffs { grid-template-columns: 1fr; }
   .ui-design2-container { grid-template-columns: 1fr; }
+  .ui-design2-dual-images { grid-template-columns: 1fr; }
   .database2-container { grid-template-columns: 1fr; }
   .qna2-grid { grid-template-columns: 1fr; }
 }

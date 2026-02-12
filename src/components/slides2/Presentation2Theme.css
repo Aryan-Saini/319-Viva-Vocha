@@ -241,6 +241,7 @@
 
 /* UI Design cards */
 .presentation2-theme .ui-design2-image,
+.presentation2-theme .ui-design2-dual-image,
 .presentation2-theme .ui-design2-features,
 .presentation2-theme .ui-design2-api {
   background: var(--bg-card);
@@ -679,6 +680,7 @@
   .presentation2-theme .decision2-lost,
   .presentation2-theme .decision2-gained,
   .presentation2-theme .ui-design2-image,
+  .presentation2-theme .ui-design2-dual-image,
   .presentation2-theme .ui-design2-features,
   .presentation2-theme .ui-design2-api,
   .presentation2-theme .api-routes2-section,

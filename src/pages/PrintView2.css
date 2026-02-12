@@ -113,6 +113,21 @@
   .print-view.presentation2-theme .print-slide-content {
     padding: 1rem;
   }
+  
+  /* Dual image layout screen preview */
+  .print-view.presentation2-theme .ui-design2-dual-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-dual-image {
+    max-height: 350px;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-dual-image img {
+    max-height: 320px;
+  }
 }
 
 /* Print-specific styles */
@@ -384,6 +399,42 @@
     align-items: start !important;
     max-height: calc(100vh - 80px) !important;
     overflow: hidden !important;
+  }
+  
+  /* Dual image layout for print */
+  .print-view.presentation2-theme .ui-design2-dual-images {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    max-width: 95% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-height: calc(100vh - 80px) !important;
+    margin: auto !important;
+  }
+  
+  .print-view.presentation2-theme .slide2-ui-design:has(.ui-design2-dual-images) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-dual-image {
+    min-height: 200px !important;
+    max-height: 400px !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .print-view.presentation2-theme .ui-design2-dual-image img {
+    max-height: 380px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
   }
   
   .print-view.presentation2-theme .ui-design2-image {
