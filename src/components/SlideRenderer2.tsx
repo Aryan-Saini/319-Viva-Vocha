@@ -11,6 +11,7 @@ import DatabaseSlide2 from './slides2/DatabaseSlide2';
 import ImageSlide2 from './slides2/ImageSlide2';
 import ReferencesSlide2 from './slides2/ReferencesSlide2';
 import ThankYouSlide2 from './slides2/ThankYouSlide2';
+import QnASlide2 from './slides2/QnASlide2';
 
 interface SlideRenderer2Props {
   slide: Slide2;
@@ -42,6 +43,8 @@ const SlideRenderer2 = ({ slide }: SlideRenderer2Props) => {
       return <ReferencesSlide2 slide={slide} />;
     case 'thank-you':
       return <ThankYouSlide2 slide={slide} />;
+    case 'qna':
+      return <QnASlide2 slide={slide} />;
     default:
       return <div>Unknown slide type</div>;
   }

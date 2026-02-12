@@ -41,8 +41,8 @@ const PrintView2 = () => {
           </div>
         )}
         {slides2.map((slide) => {
-          // Appendix slides are 25-31 (after Thank You slide which is 24)
-          const isAppendix = slide.id >= 25;
+          // Appendix slides are 29+ (Persona Diagram, Navigation Diagrams, References)
+          const isAppendix = slide.id >= 29;
           return (
             <div key={slide.id} className={`print-slide ${isAppendix ? 'appendix-slide' : ''}`}>
               {isAppendix && (

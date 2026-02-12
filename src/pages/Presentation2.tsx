@@ -162,8 +162,8 @@ const Presentation2 = () => {
             transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="slide-wrapper"
           >
-            {/* Appendix notch for slides 25-31 */}
-            {currentSlide >= 25 && (
+            {/* Appendix notch for slides 29+ (Persona Diagram, Navigation, References) */}
+            {currentSlide >= 29 && (
               <div className="appendix-notch">
                 <span>APPENDIX</span>
               </div>

@@ -1,7 +1,7 @@
 export interface Slide2 {
   id: number;
   title: string;
-  type: 'title' | 'toc' | 'summary' | 'tech-stack' | 'tech-comparison' | 'design-decision' | 'ui-design' | 'api-routes' | 'database' | 'references' | 'thank-you' | 'image-slide';
+  type: 'title' | 'toc' | 'summary' | 'tech-stack' | 'tech-comparison' | 'design-decision' | 'ui-design' | 'api-routes' | 'database' | 'references' | 'thank-you' | 'image-slide' | 'qna';
   content: Slide2Content;
 }
 
@@ -18,6 +18,12 @@ export interface Slide2Content {
   references?: Reference[];
   imageSrc?: string;
   imageCaption?: string;
+  qnaItems?: QnAItem[];
+}
+
+export interface QnAItem {
+  question: string;
+  answer: string;
 }
 
 export interface TeamMember {
@@ -140,6 +146,15 @@ export const slides2: Slide2[] = [
   },
   {
     id: 4,
+    title: "Tech Stack",
+    type: 'image-slide',
+    content: {
+      imageSrc: "image14",
+      imageCaption: "User persona core tasks flow diagram showing how different user types interact with the system"
+    }
+  },
+  {
+    id: 5,
     title: "Technical Stack Overview",
     type: 'tech-stack',
     content: {
@@ -158,7 +173,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: "Next.js - Why We Chose It",
     type: 'tech-comparison',
     content: {
@@ -190,7 +205,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 6,
+    id: 7,
     title: "shadcn/ui + Tailwind CSS",
     type: 'tech-comparison',
     content: {
@@ -217,7 +232,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 7,
+    id: 8,
     title: "Prisma ORM",
     type: 'tech-comparison',
     content: {
@@ -240,7 +255,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 8,
+    id: 9,
     title: "BetterAuth - Authentication",
     type: 'tech-comparison',
     content: {
@@ -267,7 +282,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 9,
+    id: 10,
     title: "Email & Testing Services",
     type: 'tech-comparison',
     content: {
@@ -300,7 +315,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 10,
+    id: 11,
     title: "AWS Infrastructure",
     type: 'tech-comparison',
     content: {
@@ -333,7 +348,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 11,
+    id: 12,
     title: "Design Decisions Overview",
     type: 'toc',
     content: {
@@ -348,7 +363,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 12,
+    id: 13,
     title: "Monolithic Architecture",
     type: 'design-decision',
     content: {
@@ -377,7 +392,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 13,
+    id: 14,
     title: "Strong Consistency",
     type: 'design-decision',
     content: {
@@ -405,7 +420,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 14,
+    id: 15,
     title: "PostgreSQL Database",
     type: 'design-decision',
     content: {
@@ -431,7 +446,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 15,
+    id: 16,
     title: "Self-Hosted Authentication",
     type: 'design-decision',
     content: {
@@ -457,7 +472,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 16,
+    id: 17,
     title: "Testing Strategy",
     type: 'design-decision',
     content: {
@@ -483,7 +498,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 17,
+    id: 18,
     title: "REST API",
     type: 'design-decision',
     content: {
@@ -510,7 +525,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 18,
+    id: 19,
     title: "Front-End Design Overview",
     type: 'toc',
     content: {
@@ -526,7 +541,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 19,
+    id: 20,
     title: "Client Profile Page",
     type: 'ui-design',
     content: {
@@ -545,11 +560,11 @@ export const slides2: Slide2[] = [
         ],
         figmaLink: "https://www.figma.com/design/kVoviqAYpTWBLe7BMbdTBQ"
       },
-      imageSrc: "image1"
+      imageSrc: "image12"
     }
   },
   {
-    id: 20,
+    id: 21,
     title: "Case Note Page",
     type: 'ui-design',
     content: {
@@ -570,11 +585,11 @@ export const slides2: Slide2[] = [
           "DELETE /api/case-notes/:caseNoteId - Delete note"
         ]
       },
-      imageSrc: "image2"
+      imageSrc: "image7"
     }
   },
   {
-    id: 21,
+    id: 22,
     title: "Login Page",
     type: 'ui-design',
     content: {
@@ -598,7 +613,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 22,
+    id: 23,
     title: "Admin Page",
     type: 'ui-design',
     content: {
@@ -619,11 +634,11 @@ export const slides2: Slide2[] = [
           "DELETE /api/admin/users/:userId - Delete user"
         ]
       },
-      imageSrc: "image4"
+      imageSrc: "image10"
     }
   },
   {
-    id: 23,
+    id: 24,
     title: "Reports Page",
     type: 'ui-design',
     content: {
@@ -646,18 +661,9 @@ export const slides2: Slide2[] = [
         ],
         figmaLink: "https://app.visily.ai/projects/49c24821-3755-4aac-a28f-2a026bf8660c"
       },
-      imageSrc: "image5"
+      imageSrc: "image9"
     }
   },
-  {
-    id: 24,
-    title: "Thank You",
-    type: 'thank-you',
-    content: {
-      subtitle: "Questions?"
-    }
-  },
-  // APPENDIX SECTION - slides 25-31
   {
     id: 25,
     title: "API Routes - Reports",
@@ -755,7 +761,49 @@ export const slides2: Slide2[] = [
   },
   {
     id: 28,
-    title: "Database Architecture",
+    title: "Thank You",
+    type: 'thank-you',
+    content: {
+      subtitle: "Questions?"
+    }
+  },
+  {
+    id: 29,
+    title: "Anticipated Questions",
+    type: 'qna',
+    content: {
+      qnaItems: [
+        {
+          question: "Why Prisma over raw SQL or other ORMs?",
+          answer: "Prisma provides excellent TypeScript integration with auto-generated types, reducing runtime errors. Its migration system simplifies database changes, and the team already has experience with it, saving 8-12 hours on the API layer."
+        },
+        {
+          question: "Why not use Vercel for hosting since you're using Next.js?",
+          answer: "Vercel's database services are hosted in the US, which violates Canadian data residency requirements for healthcare-adjacent data. AWS ca-central-1 ensures all client data stays in Canada for PIPEDA compliance."
+        },
+        {
+          question: "Why self-hosted auth instead of a managed service like Auth0?",
+          answer: "Most managed auth services (Clerk, Auth0) don't guarantee Canadian data storage. BetterAuth is self-hosted on our AWS infrastructure, ensuring compliance while providing built-in 2FA and RBAC support at zero ongoing cost."
+        },
+        {
+          question: "How will you handle the 6-8 week timeline?",
+          answer: "We prioritized development velocity: monolithic architecture eliminates microservice overhead, Next.js reduces setup time, and manual UI testing (vs automated) lets us iterate faster with client feedback."
+        },
+        {
+          question: "What happens if the system needs to scale beyond 10 users?",
+          answer: "The monolithic architecture can handle moderate growth. For significant scaling, the clean separation of concerns allows future migration to microservices. PostgreSQL and AWS infrastructure both scale vertically first."
+        },
+        {
+          question: "Why strong consistency over availability?",
+          answer: "For a case management system, data integrity is critical. Stale audit logs could miss unauthorized access, and inconsistent case notes could affect client care. Single-region AWS provides ~99.9% uptime, sufficient for 10 concurrent users."
+        }
+      ]
+    }
+  },
+  // APPENDIX SECTION - slides 30-32
+  {
+    id: 30,
+    title: "Persona Diagram",
     type: 'database',
     content: {
       sections: [
@@ -780,16 +828,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 29,
-    title: "Persona Flow Diagram",
-    type: 'image-slide',
-    content: {
-      imageSrc: "image14",
-      imageCaption: "User persona core tasks flow diagram showing how different user types interact with the system"
-    }
-  },
-  {
-    id: 30,
+    id: 31,
     title: "Navigation Diagrams",
     type: 'image-slide',
     content: {
@@ -798,7 +837,7 @@ export const slides2: Slide2[] = [
     }
   },
   {
-    id: 31,
+    id: 32,
     title: "References",
     type: 'references',
     content: {
