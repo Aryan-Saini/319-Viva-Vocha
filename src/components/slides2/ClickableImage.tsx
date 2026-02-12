@@ -58,10 +58,10 @@ const ClickableImage = ({ src, alt, className, onError }: ClickableImageProps) =
               src={src} 
               alt={alt}
               className="fullscreen-image"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
             />
             <button className="fullscreen-close" onClick={closeFullscreen}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

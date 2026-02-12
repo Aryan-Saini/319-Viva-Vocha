@@ -22,17 +22,18 @@
   justify-content: center;
   z-index: 10000;
   cursor: zoom-out;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .fullscreen-image {
-  max-width: 95vw;
-  max-height: 90vh;
+  max-width: none;
+  max-height: none;
   width: auto;
-  height: 90vh;
-  object-fit: contain;
+  height: auto;
+  transform: scale(1.8);
   border-radius: 4px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .fullscreen-close {
