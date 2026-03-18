@@ -5,6 +5,7 @@ import SummarySlide3 from './slides3/SummarySlide3';
 import TestStrategySlide3 from './slides3/TestStrategySlide3';
 import TestCoverageSlide3 from './slides3/TestCoverageSlide3';
 import AcceptanceCriteriaSlide3 from './slides3/AcceptanceCriteriaSlide3';
+import AcceptanceTableSlide3 from './slides3/AcceptanceTableSlide3';
 import TestResultsSlide3 from './slides3/TestResultsSlide3';
 import DesignDecisionSlide3 from './slides3/DesignDecisionSlide3';
 import ThankYouSlide3 from './slides3/ThankYouSlide3';
@@ -28,6 +29,8 @@ const SlideRenderer3 = ({ slide }: SlideRenderer3Props) => {
       return <TestCoverageSlide3 slide={slide} />;
     case 'acceptance-criteria':
       return <AcceptanceCriteriaSlide3 slide={slide} />;
+    case 'acceptance-table':
+      return <AcceptanceTableSlide3 slide={slide} />;
     case 'test-results':
       return <TestResultsSlide3 slide={slide} />;
     case 'design-decision':

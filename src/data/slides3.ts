@@ -18,6 +18,7 @@ export interface Slide3 {
     | 'test-strategy'
     | 'test-coverage'
     | 'acceptance-criteria'
+    | 'acceptance-table'
     | 'test-results';
   content: Slide3Content;
 }
@@ -151,7 +152,7 @@ export const slides3: Slide3[] = [
     title: 'Test Plan & Quality Assurance',
     type: 'title',
     content: {
-      subtitle: 'CPSC 319 - Aunt Leah\'s Place CMS',
+      subtitle: "CPSC 319 - Aunt Leah's Place CMS",
       team: [
         { name: 'Shreyan Das', role: 'Project Manager' },
         { name: 'Michael Sam', role: 'QA Lead' },
@@ -223,7 +224,8 @@ export const slides3: Slide3[] = [
       testStrategy: [
         {
           type: 'Unit Testing',
-          description: 'Test individual tRPC procedures with mocked Prisma client',
+          description:
+            'Test individual tRPC procedures with mocked Prisma client',
           execution: 'Vitest with mocked database (automated)',
           status: 'automated',
         },
@@ -264,7 +266,11 @@ export const slides3: Slide3[] = [
           feature: 'Client Management',
           testType: 'Unit Tests',
           coverage: 'CRUD, search, permissions, audit logging',
-          gaps: ['FORBIDDEN cases', 'Invalid input validation', 'Audit data capture'],
+          gaps: [
+            'FORBIDDEN cases',
+            'Invalid input validation',
+            'Audit data capture',
+          ],
           evidence: 'server/routers/__tests__/client.test.ts',
         },
         {
@@ -388,8 +394,8 @@ export const slides3: Slide3[] = [
   },
   {
     id: 8,
-    title: 'Acceptance Criteria - Client Features',
-    type: 'acceptance-criteria',
+    title: 'Acceptance Criteria Status',
+    type: 'acceptance-table',
     content: {
       acceptanceCriteria: [
         {
@@ -404,7 +410,6 @@ export const slides3: Slide3[] = [
           status: 'partial',
           evidence: '"mine" filter and active/inactive badges',
           missing: 'Specific program, case worker, date range filters',
-          plan: 'Add filter UI with dropdowns',
         },
         {
           feature: 'Client Overview',
@@ -417,24 +422,13 @@ export const slides3: Slide3[] = [
           criteria: 'System clearly identifies primary case worker',
           status: 'not-met',
           missing: 'No primary worker field or display',
-          plan: 'Add primary_worker_id to Enrollment model',
         },
         {
           feature: 'Emergency Contacts',
           criteria: 'Emergency contacts prominently displayed',
           status: 'not-met',
           missing: 'No emergency contacts field',
-          plan: 'Add to schema, create alert section',
         },
-      ],
-    },
-  },
-  {
-    id: 9,
-    title: 'Acceptance Criteria - Core Functions',
-    type: 'acceptance-criteria',
-    content: {
-      acceptanceCriteria: [
         {
           feature: 'Client Intake',
           criteria: 'Enroll clients into programs',
@@ -463,7 +457,7 @@ export const slides3: Slide3[] = [
           feature: 'Case Notes',
           criteria: 'Create, edit, view, search case notes',
           status: 'met',
-          evidence: 'Full CRUD operations at /dashboard/case-notes',
+          evidence: 'Full CRUD at /dashboard/case-notes',
         },
         {
           feature: 'Authentication',
@@ -471,15 +465,6 @@ export const slides3: Slide3[] = [
           status: 'met',
           evidence: '2FA setup and verification implemented',
         },
-      ],
-    },
-  },
-  {
-    id: 10,
-    title: 'Dashboard Features Status',
-    type: 'acceptance-criteria',
-    content: {
-      acceptanceCriteria: [
         {
           feature: 'Statistics Display',
           criteria: 'Show active clients, notes, goals, progress',
@@ -520,7 +505,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 11,
+    id: 9,
     title: 'MVP Testing Results',
     type: 'test-results',
     content: {
@@ -560,7 +545,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 12,
+    id: 10,
     title: 'Peer Testing Session',
     type: 'test-results',
     content: {
@@ -608,7 +593,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 13,
+    id: 11,
     title: 'Peer Testing Insights',
     type: 'summary',
     content: {
@@ -646,7 +631,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 14,
+    id: 12,
     title: 'Accessibility Testing',
     type: 'test-coverage',
     content: {
@@ -656,7 +641,7 @@ export const slides3: Slide3[] = [
           items: [
             'Manual review by visually impaired team member',
             'Chrome Lighthouse analysis',
-            'Keyboard-only navigation testing',
+
             'Color contrast verification',
           ],
         },
@@ -682,7 +667,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 15,
+    id: 13,
     title: 'CI/CD Pipeline',
     type: 'design-decision',
     content: {
@@ -696,10 +681,7 @@ export const slides3: Slide3[] = [
           'Exceptions only with DevOps lead approval',
         ],
         tradeoffs: {
-          lost: [
-            'Additional time for test writing',
-            'Slower PR merge process',
-          ],
+          lost: ['Additional time for test writing', 'Slower PR merge process'],
           gained: [
             'Early bug detection',
             'Consistent code quality',
@@ -711,7 +693,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 16,
+    id: 14,
     title: 'Testing Gaps & Priorities',
     type: 'test-coverage',
     content: {
@@ -749,7 +731,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 17,
+    id: 15,
     title: 'Next Steps',
     type: 'summary',
     content: {
@@ -785,7 +767,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 18,
+    id: 16,
     title: 'Thank You',
     type: 'thank-you',
     content: {
@@ -793,34 +775,40 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 19,
+    id: 17,
     title: 'Q&A - Testing Strategy',
     type: 'qna',
     content: {
       qnaItems: [
         {
           question: 'Why prioritize manual E2E over automated UI tests?',
-          answer: 'With a 6-8 week timeline and frequent UI changes based on client feedback, manual testing allows faster iteration. Automated UI tests (Playwright/Storybook) would require significant setup time and constant maintenance as the UI evolves.',
+          answer:
+            'With a 6-8 week timeline and frequent UI changes based on client feedback, manual testing allows faster iteration. Automated UI tests (Playwright/Storybook) would require significant setup time and constant maintenance as the UI evolves.',
         },
         {
           question: 'How do you ensure test quality with mocked databases?',
-          answer: 'We mock at the Prisma client level, not the database level. This ensures our business logic is tested while maintaining fast execution. Integration tests with a real test database validate the actual data flow.',
+          answer:
+            'We mock at the Prisma client level, not the database level. This ensures our business logic is tested while maintaining fast execution. Integration tests with a real test database validate the actual data flow.',
         },
         {
           question: 'What happens if coverage drops below 70%?',
-          answer: 'Our CI/CD pipeline blocks merges to main/staging if coverage drops below 70%. Developers must add tests before their PR can be merged, unless the DevOps lead grants an exception for critical hotfixes.',
+          answer:
+            'Our CI/CD pipeline blocks merges to main/staging if coverage drops below 70%. Developers must add tests before their PR can be merged, unless the DevOps lead grants an exception for critical hotfixes.',
         },
         {
           question: 'How are you handling the identified testing gaps?',
-          answer: 'We\'ve prioritized gaps based on risk and user impact. Critical gaps like date validation and race conditions are being fixed immediately. Lower priority items like automated UI tests are deferred to post-MVP.',
+          answer:
+            "We've prioritized gaps based on risk and user impact. Critical gaps like date validation and race conditions are being fixed immediately. Lower priority items like automated UI tests are deferred to post-MVP.",
         },
         {
           question: 'Why not use TDD (Test-Driven Development)?',
-          answer: 'Given our tight timeline and evolving requirements from the client, we opted for test-after-development. This allows faster prototyping while still maintaining quality through comprehensive unit tests.',
+          answer:
+            'Given our tight timeline and evolving requirements from the client, we opted for test-after-development. This allows faster prototyping while still maintaining quality through comprehensive unit tests.',
         },
         {
           question: 'How do you test accessibility beyond automated tools?',
-          answer: 'We have a visually impaired team member who manually tests the application. This provides real-world feedback that automated tools like Lighthouse might miss, such as workflow confusion or navigation difficulties.',
+          answer:
+            'We have a visually impaired team member who manually tests the application. This provides real-world feedback that automated tools like Lighthouse might miss, such as workflow confusion or navigation difficulties.',
         },
       ],
     },

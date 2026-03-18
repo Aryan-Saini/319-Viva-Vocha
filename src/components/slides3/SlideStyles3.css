@@ -808,3 +808,95 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+/* Acceptance Table Slide */
+.slide3-acceptance-table {
+  padding: 1.5rem 2.5rem;
+}
+
+.acceptance-table3-wrapper {
+  flex: 1;
+  overflow: hidden;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.acceptance-table3 {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.acceptance-table3 thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.acceptance-table3 th {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  background: rgba(0, 90, 140, 0.08);
+  color: var(--primary, #005a8c);
+}
+
+.at3-th-feature { width: 15%; }
+.at3-th-criteria { width: 32%; }
+.at3-th-status { width: 13%; text-align: center; }
+.at3-th-evidence { width: 40%; }
+
+.acceptance-table3 tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  transition: background 0.2s ease;
+}
+
+.acceptance-table3 tbody tr:hover {
+  background: rgba(0, 90, 140, 0.03);
+}
+
+.acceptance-table3 tbody tr:last-child {
+  border-bottom: none;
+}
+
+.acceptance-table3 td {
+  padding: 0.4rem 0.75rem;
+  vertical-align: middle;
+  line-height: 1.35;
+}
+
+.at3-feature {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--primary, #005a8c);
+}
+
+.at3-criteria {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.at3-status-cell {
+  text-align: center;
+}
+
+.at3-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.at3-evidence {
+  font-size: 1rem;
+  opacity: 0.85;
+}
