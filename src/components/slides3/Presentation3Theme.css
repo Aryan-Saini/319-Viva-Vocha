@@ -1,0 +1,493 @@
+/* Presentation 3 - Light Theme for Test Plan Presentation */
+/* Clean, bold aesthetic with maximum contrast and thick fonts */
+
+.presentation3-theme {
+  /* Light backgrounds - clean and bright for projectors */
+  --bg-primary: #fafafa;
+  --bg-secondary: #f0f0f2;
+  --bg-tertiary: #e8e8ec;
+  --bg-card: #ffffff;
+  --bg-hover: #f5f5f7;
+  
+  /* Professional accent colors - darker for better contrast */
+  --accent-cyan: #005a8c;
+  --accent-cyan-dim: #004570;
+  --accent-magenta: #8a3d5c;
+  --accent-yellow: #9a7209;
+  --accent-green: #1f6347;
+  --accent-orange: #a8521f;
+  --accent-red: #b91c1c;
+  
+  /* Maximum contrast text - pure black for readability */
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --text-muted: #4a4a4a;
+  
+  /* Subtle borders */
+  --border-color: #c0c0c8;
+  --border-glow: rgba(0, 90, 140, 0.15);
+  
+  /* Clean shadows */
+  --box-shadow-glow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --box-shadow-card: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Apply theme to presentation container */
+.presentation3-theme .presentation {
+  background: var(--bg-primary);
+}
+
+/* Hide header, dots, and keyboard hints ONLY in fullscreen */
+.presentation3-theme.fullscreen-mode .presentation-header,
+.presentation3-theme.fullscreen-mode .slide-dots,
+.presentation3-theme.fullscreen-mode .keyboard-hints {
+  display: none !important;
+}
+
+/* Expand slide container in fullscreen */
+.presentation3-theme.fullscreen-mode .slide-container {
+  top: 4px;
+  height: calc(100vh - 34px);
+}
+
+/* Override scanlines for light theme - make them subtle */
+.presentation3-theme .presentation-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.01) 2px,
+    rgba(0, 0, 0, 0.01) 4px
+  );
+  opacity: 0.3;
+}
+
+/* Header styling for light theme */
+.presentation3-theme .presentation-header {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.presentation3-theme .nav-button {
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+  background: var(--bg-card);
+}
+
+.presentation3-theme .nav-button:hover:not(:disabled) {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  background: var(--bg-secondary);
+}
+
+.presentation3-theme .nav-button:disabled {
+  opacity: 0.4;
+}
+
+/* Slide counter */
+.presentation3-theme .slide-counter {
+  color: var(--text-secondary);
+}
+
+.presentation3-theme .counter-current {
+  color: var(--accent-cyan);
+}
+
+/* Progress bar */
+.presentation3-theme .progress-container {
+  background: var(--bg-tertiary);
+}
+
+.presentation3-theme .progress-bar {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-cyan-dim));
+}
+
+/* Slide dots */
+.presentation3-theme .dot {
+  background: var(--border-color);
+}
+
+.presentation3-theme .dot:hover {
+  background: var(--accent-cyan-dim);
+}
+
+.presentation3-theme .dot.active {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px rgba(0, 119, 182, 0.4);
+}
+
+/* Keyboard hints */
+.presentation3-theme .keyboard-hints {
+  color: var(--text-muted);
+}
+
+.presentation3-theme .keyboard-hints kbd {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Slide wrapper background */
+.presentation3-theme .slide-wrapper {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Base slide styling */
+.presentation3-theme .slide3 {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Heading underline - cleaner gradient */
+.presentation3-theme .slide3-heading {
+  font-weight: 900;
+}
+
+.presentation3-theme .slide3-heading::after {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-cyan-dim));
+}
+
+/* Title slide decorations */
+.presentation3-theme .deco3-line {
+  background: var(--border-color);
+}
+
+.presentation3-theme .deco3-corner {
+  border-color: var(--accent-cyan);
+}
+
+.presentation3-theme .main3-title {
+  text-shadow: none;
+  color: var(--text-primary);
+  font-weight: 900;
+}
+
+.presentation3-theme .title3-subtitle {
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+/* Team roster cards */
+.presentation3-theme .roster3-member {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .member3-name {
+  font-weight: 800;
+}
+
+.presentation3-theme .member3-role {
+  font-weight: 600;
+}
+
+/* TOC items */
+.presentation3-theme .toc3-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.presentation3-theme .toc3-item:hover {
+  border-color: var(--accent-cyan);
+  background: var(--bg-secondary);
+}
+
+.presentation3-theme .toc3-number {
+  font-weight: 900;
+}
+
+.presentation3-theme .toc3-text {
+  font-weight: 700;
+}
+
+/* Summary cards */
+.presentation3-theme .summary3-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .summary3-title {
+  font-weight: 800;
+}
+
+.presentation3-theme .summary3-items li {
+  font-weight: 600;
+}
+
+/* Test Strategy cards */
+.presentation3-theme .test-strategy3-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .test-strategy3-type {
+  font-weight: 800;
+}
+
+.presentation3-theme .test-strategy3-description {
+  font-weight: 600;
+}
+
+.presentation3-theme .test-strategy3-execution {
+  font-weight: 600;
+}
+
+.presentation3-theme .test-strategy3-status {
+  font-weight: 700;
+}
+
+.presentation3-theme .status-automated {
+  background: rgba(31, 99, 71, 0.15);
+  color: var(--accent-green);
+}
+
+.presentation3-theme .status-manual {
+  background: rgba(154, 114, 9, 0.15);
+  color: var(--accent-yellow);
+}
+
+.presentation3-theme .status-planned {
+  background: rgba(0, 90, 140, 0.15);
+  color: var(--accent-cyan);
+}
+
+/* Test Coverage cards */
+.presentation3-theme .test-coverage3-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .test-coverage3-feature {
+  font-weight: 800;
+}
+
+.presentation3-theme .test-coverage3-type {
+  font-weight: 700;
+}
+
+.presentation3-theme .test-coverage3-coverage {
+  font-weight: 600;
+}
+
+.presentation3-theme .test-coverage3-gaps {
+  font-weight: 600;
+}
+
+/* Acceptance Criteria cards */
+.presentation3-theme .acceptance3-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .acceptance3-feature {
+  font-weight: 800;
+}
+
+.presentation3-theme .acceptance3-criteria {
+  font-weight: 600;
+}
+
+.presentation3-theme .acceptance3-status {
+  font-weight: 700;
+}
+
+.presentation3-theme .status-met {
+  background: rgba(31, 99, 71, 0.15);
+  color: var(--accent-green);
+}
+
+.presentation3-theme .status-partial {
+  background: rgba(154, 114, 9, 0.15);
+  color: var(--accent-yellow);
+}
+
+.presentation3-theme .status-not-met {
+  background: rgba(185, 28, 28, 0.15);
+  color: var(--accent-red);
+}
+
+/* Test Results cards */
+.presentation3-theme .test-results3-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .test-results3-category {
+  font-weight: 800;
+}
+
+.presentation3-theme .test-results3-metrics {
+  font-weight: 700;
+}
+
+.presentation3-theme .test-results3-details {
+  font-weight: 600;
+}
+
+/* Decision cards */
+.presentation3-theme .decision3-badge {
+  background: var(--bg-card);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .decision3-label {
+  font-weight: 700;
+}
+
+.presentation3-theme .decision3-value {
+  font-weight: 900;
+}
+
+.presentation3-theme .decision3-rationale,
+.presentation3-theme .decision3-lost,
+.presentation3-theme .decision3-gained {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .decision3-rationale h3,
+.presentation3-theme .decision3-lost h3,
+.presentation3-theme .decision3-gained h3 {
+  font-weight: 800;
+}
+
+.presentation3-theme .decision3-rationale li,
+.presentation3-theme .decision3-lost li,
+.presentation3-theme .decision3-gained li {
+  font-weight: 600;
+}
+
+/* Q&A cards */
+.presentation3-theme .qna3-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-card);
+}
+
+.presentation3-theme .qna3-question {
+  font-weight: 800;
+}
+
+.presentation3-theme .qna3-answer {
+  font-weight: 600;
+}
+
+/* Thank you slide */
+.presentation3-theme .thank-you3-title {
+  text-shadow: none;
+  color: var(--text-primary);
+  font-weight: 900;
+}
+
+.presentation3-theme .thank-you3-subtitle {
+  font-weight: 700;
+}
+
+.presentation3-theme .ty3-line {
+  background: var(--border-color);
+}
+
+.presentation3-theme .ty3-corner {
+  border-color: var(--accent-cyan);
+}
+
+/* Code blocks in light theme */
+.presentation3-theme code {
+  background: var(--bg-tertiary);
+  color: var(--accent-cyan);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+/* Screen styles for print view preview (light theme) */
+@media screen {
+  .print-view.presentation3-theme {
+    background: #e8e8ec !important;
+    padding: 20px;
+  }
+  
+  .print-view.presentation3-theme .print-slide {
+    background: #fafafa !important;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #c0c0c8;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 500px;
+    position: relative;
+  }
+  
+  .print-view.presentation3-theme .print-slide-number {
+    color: #4a4a4a;
+  }
+  
+  .print-view.presentation3-theme .print-loading {
+    background: #fafafa;
+  }
+  
+  .print-view.presentation3-theme .print-loading-text {
+    color: #005a8c;
+  }
+}
+
+/* Print styles for light theme */
+@media print {
+  /* Page setup - MUST be landscape */
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+  
+  /* Force light background colors */
+  .presentation3-theme,
+  .presentation3-theme .print-view,
+  .presentation3-theme .print-slide,
+  .presentation3-theme .slide3 {
+    background: #fafafa !important;
+  }
+  
+  /* Hide decorative elements */
+  .presentation3-theme .presentation-scanlines {
+    display: none !important;
+  }
+  
+  /* Ensure text is dark and readable */
+  .presentation3-theme .slide3,
+  .presentation3-theme .slide3 * {
+    color: #000000;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Card backgrounds */
+  .presentation3-theme .summary3-card,
+  .presentation3-theme .test-strategy3-item,
+  .presentation3-theme .test-coverage3-item,
+  .presentation3-theme .acceptance3-item,
+  .presentation3-theme .test-results3-card,
+  .presentation3-theme .decision3-badge,
+  .presentation3-theme .decision3-rationale,
+  .presentation3-theme .decision3-lost,
+  .presentation3-theme .decision3-gained,
+  .presentation3-theme .qna3-item,
+  .presentation3-theme .toc3-item,
+  .presentation3-theme .roster3-member {
+    background: #ffffff !important;
+    border-color: #c0c0c8 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

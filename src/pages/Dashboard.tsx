@@ -55,6 +55,21 @@ const Dashboard = () => {
     }
   };
 
+  const glowVariantsGreen = {
+    animate: {
+      boxShadow: [
+        '0 0 20px rgba(46, 125, 90, 0.2)',
+        '0 0 40px rgba(46, 125, 90, 0.4)',
+        '0 0 20px rgba(46, 125, 90, 0.2)'
+      ],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: 'easeInOut' as const
+      }
+    }
+  };
+
   return (
     <div className="dashboard">
       <div className="dashboard-scanlines" />
@@ -186,6 +201,62 @@ const Dashboard = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               variants={glowVariantsMagenta}
+              animate="animate"
+            >
+              <span className="button-text">LAUNCH PRESENTATION</span>
+              <span className="button-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </motion.button>
+          </motion.div>
+
+          {/* Test Plan Presentation Card */}
+          <motion.div 
+            className="main-card main-card-green"
+            variants={itemVariants}
+          >
+            <div className="card-corner card-corner-tl card-corner-green" />
+            <div className="card-corner card-corner-tr card-corner-green" />
+            <div className="card-corner card-corner-bl card-corner-green" />
+            <div className="card-corner card-corner-br card-corner-green" />
+            
+            <div className="card-header">
+              <span className="card-tag card-tag-green">PRESENTATION 3</span>
+              <h3 className="card-title">Test Plan</h3>
+              <p className="card-subtitle card-subtitle-green">Quality Assurance & Testing</p>
+            </div>
+
+            <div className="card-body">
+              <p className="card-description">
+                Testing strategy, acceptance criteria, unit/E2E coverage,
+                peer testing results, CI/CD pipeline, and accessibility.
+              </p>
+
+              <div className="card-stats">
+                <div className="stat-mini">
+                  <span className="stat-mini-value">19</span>
+                  <span className="stat-mini-label">Slides</span>
+                </div>
+                <div className="stat-mini">
+                  <span className="stat-mini-value">5</span>
+                  <span className="stat-mini-label">Test Types</span>
+                </div>
+                <div className="stat-mini">
+                  <span className="stat-mini-value">70%+</span>
+                  <span className="stat-mini-label">Coverage</span>
+                </div>
+              </div>
+            </div>
+
+            <motion.button 
+              className="launch-button launch-button-green"
+              onClick={() => navigate('/presentation3/1')}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              variants={glowVariantsGreen}
               animate="animate"
             >
               <span className="button-text">LAUNCH PRESENTATION</span>

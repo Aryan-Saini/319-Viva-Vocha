@@ -1,0 +1,557 @@
+/* Print View 3 Styles - Light Theme for Test Plan Presentation */
+
+@page {
+  size: landscape;
+  margin: 0;
+}
+
+.print-view.presentation3-theme {
+  background: #fafafa !important;
+}
+
+/* Loading indicator */
+.print-view.presentation3-theme .print-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.print-view.presentation3-theme .print-loading-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #005a8c;
+  animation: pulse3 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse3 {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.print-view.presentation3-theme .print-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #fafafa !important;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+
+.print-view.presentation3-theme .print-slide:last-child {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.print-view.presentation3-theme .print-slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.print-view.presentation3-theme .print-slide-number {
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #4a4a4a;
+}
+
+/* Screen preview styles */
+@media screen {
+  .print-view.presentation3-theme {
+    padding: 20px;
+    background: #e0e0e4 !important;
+  }
+  
+  .print-view.presentation3-theme .print-slide {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid #c0c0c8;
+    height: auto;
+    min-height: 500px;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .print-view.presentation3-theme .print-slide-content {
+    padding: 1rem;
+  }
+}
+
+/* Print-specific styles */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    box-shadow: none !important;
+  }
+  
+  .print-view.presentation3-theme .print-loading {
+    display: none !important;
+  }
+  
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fafafa !important;
+  }
+  
+  .print-view.presentation3-theme {
+    background: #fafafa !important;
+    padding: 0 !important;
+  }
+  
+  .print-view.presentation3-theme .print-slide {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+    background: #fafafa !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  .print-view.presentation3-theme .print-slide-content {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  /* Base slide */
+  .print-view.presentation3-theme .slide3 {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    padding: 1rem 2rem !important;
+    box-sizing: border-box !important;
+    background: #fafafa !important;
+    font-size: 1.3rem !important;
+  }
+  
+  .print-view.presentation3-theme .slide3-heading {
+    font-size: 2.8rem !important;
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.4rem !important;
+  }
+  
+  .print-view.presentation3-theme .slide3-heading::after {
+    height: 4px !important;
+    width: 90px !important;
+  }
+
+  /* ---- TITLE SLIDE ---- */
+  .print-view.presentation3-theme .main3-title {
+    font-size: 4.2rem !important;
+  }
+  
+  .print-view.presentation3-theme .title3-tag {
+    font-size: 1.2rem !important;
+  }
+  
+  .print-view.presentation3-theme .title3-subtitle {
+    font-size: 1.9rem !important;
+  }
+  
+  .print-view.presentation3-theme .team3-roster {
+    margin-top: 2rem !important;
+  }
+  
+  .print-view.presentation3-theme .roster3-header {
+    margin-bottom: 1rem !important;
+  }
+  
+  .print-view.presentation3-theme .roster3-label {
+    font-size: 1.1rem !important;
+  }
+  
+  .print-view.presentation3-theme .roster3-grid {
+    gap: 0.75rem !important;
+  }
+  
+  .print-view.presentation3-theme .roster3-member {
+    padding: 0.65rem 0.75rem !important;
+  }
+
+  .print-view.presentation3-theme .member3-name {
+    font-size: 1.3rem !important;
+  }
+  
+  .print-view.presentation3-theme .member3-role {
+    font-size: 1.1rem !important;
+  }
+
+  /* ---- TOC SLIDE ---- */
+  .print-view.presentation3-theme .toc3-grid {
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+    flex: 1 !important;
+    align-content: stretch !important;
+  }
+
+  .print-view.presentation3-theme .toc3-item {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .print-view.presentation3-theme .toc3-number {
+    font-size: 2rem !important;
+  }
+
+  .print-view.presentation3-theme .toc3-text {
+    font-size: 1.45rem !important;
+  }
+
+  /* ---- SUMMARY SLIDE ---- */
+  .print-view.presentation3-theme .summary3-grid {
+    gap: 0.65rem !important;
+    margin-top: 1rem !important;
+    flex: 1 !important;
+  }
+
+  .print-view.presentation3-theme .summary3-card {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .print-view.presentation3-theme .summary3-title {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .print-view.presentation3-theme .summary3-items li {
+    font-size: 1.4rem !important;
+    line-height: 1.4 !important;
+    padding: 0.25rem 0 !important;
+    padding-left: 1.3rem !important;
+  }
+
+  /* ---- TEST STRATEGY SLIDE ---- */
+  .print-view.presentation3-theme .test-strategy3-grid {
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+    flex: 1 !important;
+  }
+
+  .print-view.presentation3-theme .test-strategy3-item {
+    padding: 0.65rem 1rem !important;
+    flex: 1 !important;
+  }
+
+  .print-view.presentation3-theme .test-strategy3-type {
+    font-size: 1.45rem !important;
+  }
+
+  .print-view.presentation3-theme .test-strategy3-description {
+    font-size: 1.25rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-strategy3-execution {
+    font-size: 1.15rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-strategy3-status {
+    font-size: 1.05rem !important;
+    padding: 0.3rem 0.75rem !important;
+  }
+
+  /* ---- TEST COVERAGE SLIDE ---- */
+  .print-view.presentation3-theme .test-coverage3-grid {
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+    flex: 1 !important;
+    align-content: stretch !important;
+  }
+
+  .print-view.presentation3-theme .test-coverage3-item {
+    padding: 0.5rem 0.85rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-coverage3-feature {
+    font-size: 1.35rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-coverage3-type {
+    font-size: 1rem !important;
+    padding: 0.15rem 0.55rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-coverage3-coverage {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-coverage3-gaps h4 {
+    font-size: 1rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-coverage3-gaps li {
+    font-size: 1.1rem !important;
+    padding: 0.05rem 0 !important;
+  }
+  
+  .print-view.presentation3-theme .test-coverage3-evidence {
+    font-size: 1rem !important;
+    margin-top: 0.15rem !important;
+    padding-top: 0.15rem !important;
+  }
+
+  /* ---- ACCEPTANCE CRITERIA SLIDE ---- */
+  .print-view.presentation3-theme .acceptance3-grid {
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+    flex: 1 !important;
+    align-content: stretch !important;
+  }
+
+  .print-view.presentation3-theme .acceptance3-item {
+    padding: 0.5rem 0.85rem !important;
+  }
+  
+  .print-view.presentation3-theme .acceptance3-feature {
+    font-size: 1.5rem !important;
+  }
+  
+  .print-view.presentation3-theme .acceptance3-status {
+    font-size: 1.05rem !important;
+    padding: 0.2rem 0.6rem !important;
+  }
+  
+  .print-view.presentation3-theme .acceptance3-criteria {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+  
+  .print-view.presentation3-theme .acceptance3-details {
+    font-size: 1.15rem !important;
+    padding-top: 0.25rem !important;
+  }
+  
+  .print-view.presentation3-theme .acceptance3-evidence,
+  .print-view.presentation3-theme .acceptance3-missing,
+  .print-view.presentation3-theme .acceptance3-plan {
+    margin: 0.08rem 0 !important;
+    line-height: 1.35 !important;
+  }
+
+  /* ---- TEST RESULTS SLIDE ---- */
+  .print-view.presentation3-theme .test-results3-grid {
+    gap: 0.6rem !important;
+    margin-top: 1rem !important;
+    flex: 1 !important;
+  }
+
+  .print-view.presentation3-theme .test-results3-card {
+    padding: 0.65rem 0.85rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-results3-category {
+    font-size: 1.6rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-results3-badge {
+    font-size: 1.05rem !important;
+    padding: 0.25rem 0.6rem !important;
+  }
+  
+  .print-view.presentation3-theme .metric3-label {
+    font-size: 1.2rem !important;
+  }
+  
+  .print-view.presentation3-theme .metric3-value {
+    font-size: 1.4rem !important;
+  }
+  
+  .print-view.presentation3-theme .metric3-item {
+    padding: 0.35rem 0.55rem !important;
+  }
+  
+  .print-view.presentation3-theme .test-results3-details li {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+    padding: 0.25rem 0 !important;
+  }
+
+  /* ---- DESIGN DECISION SLIDE ---- */
+  .print-view.presentation3-theme .decision3-container {
+    gap: 0.65rem !important;
+    margin-top: 1rem !important;
+    flex: 1 !important;
+  }
+  
+  .print-view.presentation3-theme .decision3-badge {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .print-view.presentation3-theme .decision3-label {
+    font-size: 1.15rem !important;
+  }
+  
+  .print-view.presentation3-theme .decision3-value {
+    font-size: 1.7rem !important;
+  }
+  
+  .print-view.presentation3-theme .decision3-grid {
+    gap: 0.65rem !important;
+    flex: 1 !important;
+  }
+  
+  .print-view.presentation3-theme .decision3-rationale,
+  .print-view.presentation3-theme .decision3-lost,
+  .print-view.presentation3-theme .decision3-gained {
+    padding: 0.7rem 0.85rem !important;
+  }
+  
+  .print-view.presentation3-theme .decision3-rationale h3,
+  .print-view.presentation3-theme .decision3-lost h3,
+  .print-view.presentation3-theme .decision3-gained h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .print-view.presentation3-theme .decision3-rationale li,
+  .print-view.presentation3-theme .decision3-lost li,
+  .print-view.presentation3-theme .decision3-gained li {
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    padding: 0.2rem 0 !important;
+  }
+
+  /* ---- Q&A SLIDE ---- */
+  .print-view.presentation3-theme .qna3-grid {
+    gap: 0.45rem !important;
+    margin-top: 0.75rem !important;
+    flex: 1 !important;
+    align-content: stretch !important;
+  }
+
+  .print-view.presentation3-theme .qna3-item {
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  .print-view.presentation3-theme .qna3-question {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .print-view.presentation3-theme .qna3-answer {
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* ---- THANK YOU SLIDE ---- */
+  .print-view.presentation3-theme .thank-you3-title {
+    font-size: 5rem !important;
+  }
+  
+  .print-view.presentation3-theme .thank-you3-subtitle {
+    font-size: 2.4rem !important;
+  }
+  
+  .print-view.presentation3-theme .thank-you3-footer {
+    font-size: 1.25rem !important;
+  }
+
+  /* Hide navigation elements */
+  .print-view.presentation3-theme .presentation-header,
+  .print-view.presentation3-theme .slide-dots,
+  .print-view.presentation3-theme .keyboard-hints,
+  .print-view.presentation3-theme .progress-container,
+  .print-view.presentation3-theme .presentation-scanlines {
+    display: none !important;
+  }
+
+  /* Force all framer-motion elements visible for print */
+  .print-view.presentation3-theme [style*="opacity"] {
+    opacity: 1 !important;
+  }
+  
+  .print-view.presentation3-theme [style*="transform"] {
+    transform: none !important;
+  }
+
+  /* Prevent page breaks inside elements */
+  .print-view.presentation3-theme .slide3,
+  .print-view.presentation3-theme .print-slide-content {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  /* Card backgrounds for print */
+  .print-view.presentation3-theme .summary3-card,
+  .print-view.presentation3-theme .test-strategy3-item,
+  .print-view.presentation3-theme .test-coverage3-item,
+  .print-view.presentation3-theme .acceptance3-item,
+  .print-view.presentation3-theme .test-results3-card,
+  .print-view.presentation3-theme .decision3-badge,
+  .print-view.presentation3-theme .decision3-rationale,
+  .print-view.presentation3-theme .decision3-lost,
+  .print-view.presentation3-theme .decision3-gained,
+  .print-view.presentation3-theme .qna3-item,
+  .print-view.presentation3-theme .toc3-item,
+  .print-view.presentation3-theme .roster3-member {
+    background: #ffffff !important;
+    border-color: #c0c0c8 !important;
+  }
+  
+  /* Status badge colors for print */
+  .print-view.presentation3-theme .status-met,
+  .print-view.presentation3-theme .status-automated {
+    background: rgba(31, 99, 71, 0.15) !important;
+    color: #1f6347 !important;
+  }
+  
+  .print-view.presentation3-theme .status-partial,
+  .print-view.presentation3-theme .status-manual {
+    background: rgba(154, 114, 9, 0.15) !important;
+    color: #9a7209 !important;
+  }
+  
+  .print-view.presentation3-theme .status-not-met {
+    background: rgba(185, 28, 28, 0.15) !important;
+    color: #b91c1c !important;
+  }
+  
+  .print-view.presentation3-theme .status-planned {
+    background: rgba(0, 90, 140, 0.15) !important;
+    color: #005a8c !important;
+  }
+  
+  .print-view.presentation3-theme .test-results3-badge.resolved {
+    background: rgba(31, 99, 71, 0.15) !important;
+    color: #1f6347 !important;
+  }
+  
+  /* Accent colors for headings in print */
+  .print-view.presentation3-theme .slide3-heading,
+  .print-view.presentation3-theme .toc3-number,
+  .print-view.presentation3-theme .summary3-title,
+  .print-view.presentation3-theme .test-coverage3-feature,
+  .print-view.presentation3-theme .acceptance3-feature,
+  .print-view.presentation3-theme .test-results3-category,
+  .print-view.presentation3-theme .test-strategy3-type,
+  .print-view.presentation3-theme .decision3-value,
+  .print-view.presentation3-theme .decision3-rationale h3,
+  .print-view.presentation3-theme .decision3-lost h3,
+  .print-view.presentation3-theme .decision3-gained h3 {
+    color: #005a8c !important;
+  }
+}
