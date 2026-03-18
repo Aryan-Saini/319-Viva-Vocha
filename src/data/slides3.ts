@@ -313,87 +313,6 @@ export const slides3: Slide3[] = [
   },
   {
     id: 6,
-    title: 'Client Management Testing',
-    type: 'test-coverage',
-    content: {
-      sections: [
-        {
-          title: 'Procedures Tested',
-          items: [
-            'list - Returns simple client list with names',
-            'getAll - Filters by search query and "mine" parameter',
-            'getById - Returns client with enrollments and audit log',
-            'update - Updates fields and creates audit log',
-            'delete - Soft deletes client (is_active = false)',
-            'restore - Restores deleted client (admin/manager only)',
-          ],
-        },
-        {
-          title: 'Validation Coverage',
-          items: [
-            'First/last name required (non-empty after trim)',
-            'Date of birth: after 1900-01-01, before today',
-            'Email format validation (regex pattern)',
-            'Phone number validation (minimum 10 digits)',
-            'Permission-based filtering ("mine" parameter)',
-            'Role-based restore operation',
-          ],
-        },
-        {
-          title: 'Identified Gaps',
-          items: [
-            'No tests for assertCanAccessClientById helper',
-            'Missing FORBIDDEN scenario coverage',
-            'Invalid input validation incomplete',
-            'Audit log data capture verification needed',
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 7,
-    title: 'Authentication & Security Testing',
-    type: 'test-coverage',
-    content: {
-      sections: [
-        {
-          title: 'Coverage Areas',
-          items: [
-            'Session management and onboarding state',
-            'First-login password change flow',
-            'MFA setup and verification',
-            'Admin user creation with temp passwords',
-            'Password and 2FA reset functionality',
-            'Program-based access control',
-          ],
-        },
-        {
-          title: 'Test Scenarios',
-          items: [
-            'Returns null session for unauthenticated users',
-            'Verifies current password before changes',
-            'Handles MFA setup failures gracefully',
-            'Rejects duplicate email addresses',
-            'Restricts admin actions to authorized roles',
-            'Validates program assignments for workers',
-          ],
-        },
-        {
-          title: 'Security Validations',
-          items: [
-            'Role-based access control (RBAC)',
-            'Program-level permissions',
-            'Session token invalidation',
-            'Temporary password requirements',
-            'MFA enforcement for non-admins',
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 8,
     title: 'Acceptance Criteria Status',
     type: 'acceptance-table',
     content: {
@@ -505,7 +424,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 9,
+    id: 7,
     title: 'MVP Testing Results',
     type: 'test-results',
     content: {
@@ -545,7 +464,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 10,
+    id: 8,
     title: 'Peer Testing Session',
     type: 'test-results',
     content: {
@@ -593,7 +512,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 11,
+    id: 9,
     title: 'Peer Testing Insights',
     type: 'summary',
     content: {
@@ -631,7 +550,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 12,
+    id: 10,
     title: 'Accessibility Testing',
     type: 'test-coverage',
     content: {
@@ -667,7 +586,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 13,
+    id: 11,
     title: 'CI/CD Pipeline',
     type: 'design-decision',
     content: {
@@ -693,7 +612,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 14,
+    id: 12,
     title: 'Testing Gaps & Priorities',
     type: 'test-coverage',
     content: {
@@ -731,7 +650,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 15,
+    id: 13,
     title: 'Next Steps',
     type: 'summary',
     content: {
@@ -767,7 +686,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 16,
+    id: 14,
     title: 'Thank You',
     type: 'thank-you',
     content: {
@@ -775,7 +694,7 @@ export const slides3: Slide3[] = [
     },
   },
   {
-    id: 17,
+    id: 15,
     title: 'Q&A - Testing Strategy',
     type: 'qna',
     content: {
