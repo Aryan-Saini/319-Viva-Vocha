@@ -245,8 +245,14 @@
   .print-view.presentation3-theme .summary3-items li {
     font-size: 1.4rem !important;
     line-height: 1.4 !important;
-    padding: 0.25rem 0 !important;
-    padding-left: 1.3rem !important;
+    padding: 0.25rem 0 0.25rem 1.3rem !important;
+    position: relative !important;
+  }
+
+  .print-view.presentation3-theme .summary3-items li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.25rem !important;
   }
 
   /* ---- TEST STRATEGY SLIDE ---- */
@@ -310,7 +316,13 @@
 
   .print-view.presentation3-theme .test-coverage3-gaps li {
     font-size: 1.1rem !important;
-    padding: 0.05rem 0 !important;
+    padding: 0.05rem 0 0.05rem 1rem !important;
+    position: relative !important;
+  }
+
+  .print-view.presentation3-theme .test-coverage3-gaps li::before {
+    position: absolute !important;
+    left: 0 !important;
   }
 
   .print-view.presentation3-theme .test-coverage3-evidence {
@@ -392,7 +404,14 @@
   .print-view.presentation3-theme .test-results3-details li {
     font-size: 1.25rem !important;
     line-height: 1.4 !important;
-    padding: 0.25rem 0 !important;
+    padding: 0.25rem 0 0.25rem 1.5rem !important;
+    position: relative !important;
+  }
+
+  .print-view.presentation3-theme .test-results3-details li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.25rem !important;
   }
 
   /* ---- DESIGN DECISION SLIDE ---- */
@@ -437,7 +456,16 @@
   .print-view.presentation3-theme .decision3-gained li {
     font-size: 1.15rem !important;
     line-height: 1.4 !important;
-    padding: 0.2rem 0 !important;
+    padding: 0.2rem 0 0.2rem 1.25rem !important;
+    position: relative !important;
+  }
+
+  .print-view.presentation3-theme .decision3-rationale li::before,
+  .print-view.presentation3-theme .decision3-lost li::before,
+  .print-view.presentation3-theme .decision3-gained li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.2rem !important;
   }
 
   /* ---- Q&A SLIDE ---- */
